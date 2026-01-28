@@ -38,6 +38,7 @@ export const websiteConfig: WebsiteConfig = {
     enableAffonsoAffiliate: false,
     enablePromotekitAffiliate: false,
     enableDocsPage: false,
+    enableBlogPage: false,
     enableAIPages: false,
     enableMagicUIPage: false,
     enableBlocksPages: false,

@@ -70,6 +70,7 @@ export interface FeaturesConfig {
   enableAffonsoAffiliate?: boolean;   // Whether to enable affonso affiliate
   enablePromotekitAffiliate?: boolean;   // Whether to enable promotekit affiliate
   enableDocsPage?: boolean;           // Whether to enable the docs page
+  enableBlogPage?: boolean;           // Whether to enable the blog pages
   enableAIPages?: boolean;            // Whether to enable the AI pages
   enableMagicUIPage?: boolean;        // Whether to enable the MagicUI showcase page
   enableBlocksPages?: boolean;        // Whether to enable the blocks pages
