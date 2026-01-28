@@ -3,7 +3,6 @@
 import { LoginWrapper } from '@/components/auth/login-wrapper';
 import Container from '@/components/layout/container';
 import { Logo } from '@/components/layout/logo';
-import { ModeSwitcher } from '@/components/layout/mode-switcher';
 import { NavbarMobile } from '@/components/layout/navbar-mobile';
 import { UserButton } from '@/components/layout/user-button';
 import { Button } from '@/components/ui/button';
@@ -28,7 +27,6 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Skeleton } from '../ui/skeleton';
-import LocaleSwitcher from './locale-switcher';
 
 interface NavBarProps {
   scroll?: boolean;
@@ -234,7 +232,6 @@ export function Navbar({ scroll }: NavBarProps) {
                     {t('Common.login')}
                   </Button>
                 </LoginWrapper>
-
                 <LocaleLink
                   href={Routes.Register}
                   className={cn(
@@ -248,9 +245,6 @@ export function Navbar({ scroll }: NavBarProps) {
                 </LocaleLink>
               </div>
             )}
-
-            <ModeSwitcher />
-            <LocaleSwitcher />
           </div>
         </nav>
 
