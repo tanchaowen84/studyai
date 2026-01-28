@@ -16,15 +16,9 @@ function getEnabledStaticRoutes(): string[] {
   const baseRoutes = [
     '/',
     '/pricing',
-    '/about',
-    '/contact',
-    '/waitlist',
-    '/changelog',
     '/privacy',
     '/terms',
     '/cookie',
-    '/auth/login',
-    '/auth/register',
   ];
 
   // 条件性添加页面路由
