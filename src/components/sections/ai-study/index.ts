@@ -5,3 +5,4 @@ export { default as HowItWorksSection } from './how-it-works';
 export { default as InteractiveDemoSection } from './interactive-demo';
 export { default as ComparisonSection } from './comparison';
 export { default as UseCasesSection } from './use-cases';
+export { default as ScrollStackShowcaseSection } from './scroll-stack-showcase';

@@ -1,6 +1,5 @@
 import { useLayoutEffect, useRef, useCallback } from 'react';
 import Lenis from 'lenis';
-import './ScrollStack.css';
 
 export const ScrollStackItem = ({ children, itemClassName = '' }) => (
   <div className={`scroll-stack-card ${itemClassName}`.trim()}>{children}</div>
@@ -19,6 +18,7 @@ const ScrollStack = ({
   rotationAmount = 0,
   blurAmount = 0,
   useWindowScroll = false,
+  enableSmoothScroll = true,
   onStackComplete
 }) => {
   const scrollerRef = useRef(null);
@@ -62,11 +62,15 @@ const ScrollStack = ({
   const getElementOffset = useCallback(
     element => {
       if (useWindowScroll) {
-        const rect = element.getBoundingClientRect();
-        return rect.top + window.scrollY;
-      } else {
-        return element.offsetTop;
+        let offset = 0;
+        let current = element;
+        while (current) {
+          offset += current.offsetTop || 0;
+          current = current.offsetParent;
+        }
+        return offset;
       }
+      return element.offsetTop;
     },
     [useWindowScroll]
   );
@@ -172,6 +176,7 @@ const ScrollStack = ({
     rotationAmount,
     blurAmount,
     useWindowScroll,
+    enableSmoothScroll,
     onStackComplete,
     calculateProgress,
     parsePercentage,
@@ -268,11 +273,29 @@ const ScrollStack = ({
       card.style.webkitPerspective = '1000px';
     });
 
-    setupLenis();
+    let cleanupScroll = null;
+
+    if (enableSmoothScroll) {
+      setupLenis();
+    } else {
+      const scrollTarget = useWindowScroll ? window : scroller;
+      const onScroll = () => handleScroll();
+      const onResize = () => handleScroll();
+
+      scrollTarget.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onResize);
+      cleanupScroll = () => {
+        scrollTarget.removeEventListener('scroll', onScroll);
+        window.removeEventListener('resize', onResize);
+      };
+    }
 
     updateCardTransforms();
 
     return () => {
+      if (cleanupScroll) {
+        cleanupScroll();
+      }
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }

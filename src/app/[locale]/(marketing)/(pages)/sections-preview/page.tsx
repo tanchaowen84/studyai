@@ -4,6 +4,7 @@ import {
   HowItWorksSection,
   InteractiveDemoSection,
   LearningCrisisSection,
+  ScrollStackShowcaseSection,
   SolutionHeroSection,
   UseCasesSection,
 } from '@/components/sections/ai-study';
@@ -14,6 +15,7 @@ export default function SectionsPreviewPage() {
       <SolutionHeroSection />
       <LearningCrisisSection />
       <CoreFeaturesSection />
+      <ScrollStackShowcaseSection />
       <HowItWorksSection />
       <InteractiveDemoSection />
       <ComparisonSection />
