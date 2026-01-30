@@ -33,7 +33,7 @@ const useCases = [
 
 export default function UseCasesSection() {
   return (
-    <section id="use-cases" className="relative px-6 py-24">
+    <section id="use-cases" className="bg-slate-50 px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-500">
@@ -52,7 +52,7 @@ export default function UseCasesSection() {
           {useCases.map((useCase) => (
             <div
               key={useCase.title}
-              className="group rounded-3xl border border-slate-200/80 bg-white p-6 shadow-[0_20px_55px_-40px_rgba(15,23,42,0.5)] transition duration-300 hover:-translate-y-2"
+              className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1"
             >
               <div className="flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 ring-1 ring-blue-100">

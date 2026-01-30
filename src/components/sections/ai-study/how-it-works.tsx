@@ -23,7 +23,7 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="relative px-6 py-24">
+    <section id="how-it-works" className="bg-slate-50 px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-500">
@@ -43,7 +43,7 @@ export default function HowItWorksSection() {
           {steps.map((step, index) => (
             <div
               key={step.title}
-              className="group relative rounded-3xl border border-slate-200/80 bg-white px-6 py-8 shadow-[0_20px_55px_-40px_rgba(15,23,42,0.5)] transition duration-300 hover:-translate-y-2"
+              className="group relative rounded-3xl border border-slate-200 bg-white px-6 py-8 shadow-sm transition duration-300 hover:-translate-y-1"
             >
               <div className="flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-[0_10px_30px_-20px_rgba(37,99,235,0.8)]">
@@ -59,7 +59,6 @@ export default function HowItWorksSection() {
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
                 {step.description}
               </p>
-              <div className="pointer-events-none absolute inset-x-6 bottom-6 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
             </div>
           ))}
         </div>

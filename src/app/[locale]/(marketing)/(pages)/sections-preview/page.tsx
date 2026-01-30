@@ -10,7 +10,7 @@ import {
 
 export default function SectionsPreviewPage() {
   return (
-    <main className="flex flex-col bg-white">
+    <main className="flex flex-col bg-slate-50">
       <SolutionHeroSection />
       <LearningCrisisSection />
       <CoreFeaturesSection />
