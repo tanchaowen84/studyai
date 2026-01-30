@@ -90,6 +90,7 @@
     "fumadocs-core": "^15.1.2",
     "fumadocs-ui": "^15.1.2",
     "input-otp": "^1.4.2",
+    "lenis": "^1.3.13",
     "lucide-react": "^0.483.0",
     "mdast-util-toc": "^7.1.0",
     "motion": "^12.4.3",
