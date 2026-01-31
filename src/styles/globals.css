@@ -259,6 +259,28 @@
   }
 }
 
+/* Pricing toggle styling for blue process sections */
+.pricing-process [data-slot="toggle-group"] {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.4);
+  padding: 6px;
+  gap: 6px;
+}
+
+.pricing-process [data-slot="toggle-group-item"] {
+  border-radius: 999px;
+  font-weight: 600;
+  color: rgba(15, 23, 42, 0.7);
+  background: transparent;
+}
+
+.pricing-process [data-slot="toggle-group-item"][data-state="on"] {
+  background: #ffffff;
+  color: #1e293b;
+  box-shadow: 0 10px 25px rgba(30, 60, 110, 0.18);
+}
+
 :root {
   --background: oklch(0.98 0.0 247.86);
   --foreground: oklch(0.28 0.04 260.03);

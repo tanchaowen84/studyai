@@ -8,6 +8,7 @@ import {
   HowItWorksSection,
   InteractiveDemoSection,
   LearningCrisisSection,
+  PricingProcessSection,
   ScrollStackShowcaseSection,
   SolutionHeroSection,
   UseCasesSection,
@@ -24,6 +25,7 @@ export default function SectionsPreviewPage() {
       <HowItWorksProcessSection />
       <FaqProcessSection />
       <CtaProcessSection />
+      <PricingProcessSection />
       <HowItWorksSection />
       <InteractiveDemoSection />
       <ComparisonSection />

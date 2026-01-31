@@ -10,3 +10,4 @@ export { default as HowItWorksProcessSection } from './how-it-works-process';
 export { default as FaqProcessSection } from './faq-process';
 export { default as CtaProcessSection } from './cta-process';
 export { default as GallerySection } from './gallery-section';
+export { default as PricingProcessSection } from './pricing-process';
