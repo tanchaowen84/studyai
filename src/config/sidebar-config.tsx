@@ -3,11 +3,9 @@
 import { Routes } from '@/routes';
 import type { NestedMenuItem } from '@/types';
 import {
-  BellIcon,
   CircleUserRoundIcon,
   CreditCardIcon,
   LayoutDashboardIcon,
-  LockKeyholeIcon,
   Settings2Icon,
   SettingsIcon,
   UsersRoundIcon,
@@ -64,18 +62,6 @@ export function getSidebarLinks(): NestedMenuItem[] {
           title: t('settings.billing.title'),
           icon: <CreditCardIcon className="size-4 shrink-0" />,
           href: Routes.SettingsBilling,
-          external: false,
-        },
-        {
-          title: t('settings.security.title'),
-          icon: <LockKeyholeIcon className="size-4 shrink-0" />,
-          href: Routes.SettingsSecurity,
-          external: false,
-        },
-        {
-          title: t('settings.notification.title'),
-          icon: <BellIcon className="size-4 shrink-0" />,
-          href: Routes.SettingsNotifications,
           external: false,
         },
       ],
