@@ -1,6 +1,7 @@
 import {
   ComparisonSection,
   CoreFeaturesSection,
+  HowItWorksProcessSection,
   HowItWorksSection,
   InteractiveDemoSection,
   LearningCrisisSection,
@@ -16,6 +17,7 @@ export default function SectionsPreviewPage() {
       <LearningCrisisSection />
       <CoreFeaturesSection />
       <ScrollStackShowcaseSection />
+      <HowItWorksProcessSection />
       <HowItWorksSection />
       <InteractiveDemoSection />
       <ComparisonSection />

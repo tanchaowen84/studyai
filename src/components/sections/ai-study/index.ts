@@ -6,3 +6,4 @@ export { default as InteractiveDemoSection } from './interactive-demo';
 export { default as ComparisonSection } from './comparison';
 export { default as UseCasesSection } from './use-cases';
 export { default as ScrollStackShowcaseSection } from './scroll-stack-showcase';
+export { default as HowItWorksProcessSection } from './how-it-works-process';
