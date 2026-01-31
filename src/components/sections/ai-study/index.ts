@@ -11,3 +11,4 @@ export { default as FaqProcessSection } from './faq-process';
 export { default as CtaProcessSection } from './cta-process';
 export { default as GallerySection } from './gallery-section';
 export { default as PricingProcessSection } from './pricing-process';
+export { default as VideoProcessSection } from './video-process';

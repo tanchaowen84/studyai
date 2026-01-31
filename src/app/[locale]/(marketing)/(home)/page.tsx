@@ -6,6 +6,7 @@ import {
   HowItWorksProcessSection,
   PricingProcessSection,
   ScrollStackShowcaseSection,
+  VideoProcessSection,
 } from '@/components/sections/ai-study';
 import { constructMetadata } from '@/lib/metadata';
 import { getUrlWithLocale } from '@/lib/urls/urls';
@@ -44,6 +45,7 @@ export default async function HomePage(props: HomePageProps) {
     <>
       <div className="flex flex-col">
         <HeroSection />
+        <VideoProcessSection />
         <HowItWorksProcessSection />
         <ScrollStackShowcaseSection />
         <GallerySection />

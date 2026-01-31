@@ -6,7 +6,6 @@ import { useCurrentUser } from '@/hooks/use-current-user';
 import { cn } from '@/lib/utils';
 import { Send } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useCallback, useMemo, useState } from 'react';
 import { toast } from 'sonner';
@@ -166,20 +165,7 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* images */}
-            <div>
-              <div className="relative -mr-56 mt-10 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-16">
-                <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-white/70 bg-[#ECF2FF] p-4 shadow-[0_25px_60px_rgba(30,60,110,0.2)]">
-                  <Image
-                    className="relative rounded-2xl border border-white/70"
-                    src="https://cdn.flowchartai.org/static/blocks/demo.png"
-                    alt="FlowChart AI Demo"
-                    width={2796}
-                    height={2008}
-                  />
-                </div>
-              </div>
-            </div>
+            {/* image removed for new video section */}
           </div>
         </section>
       </main>
