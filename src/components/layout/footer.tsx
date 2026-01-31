@@ -7,7 +7,6 @@ import { LocaleLink } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import type React from 'react';
-import { ModeSwitcherHorizontal } from '@/components/layout/mode-switcher-horizontal';
 
 export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
   const t = useTranslations();
@@ -77,10 +76,7 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
             Reserved.
           </span>
 
-          <div className="flex items-center gap-x-4">
-            {/* <ThemeSelector /> */}
-            <ModeSwitcherHorizontal />
-          </div>
+          <div className="flex items-center gap-x-4" />
         </Container>
       </div>
     </footer>
