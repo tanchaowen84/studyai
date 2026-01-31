@@ -167,20 +167,7 @@ function MainMobileMenu({ userLoggedIn, onLinkClicked }: MainMobileMenuProps) {
                 'w-full border-white/80 bg-white/70 text-slate-700 hover:bg-white'
               )}
             >
-              {t('Common.login')}
-            </LocaleLink>
-            <LocaleLink
-              href={Routes.Register}
-              className={cn(
-                buttonVariants({
-                  variant: 'default',
-                  size: 'lg',
-                }),
-                'w-full bg-slate-900 text-white hover:bg-slate-800'
-              )}
-              onClick={onLinkClicked}
-            >
-              {t('Common.signUp')}
+              Start for free
             </LocaleLink>
           </div>
         )}

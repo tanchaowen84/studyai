@@ -229,21 +229,9 @@ export function Navbar({ scroll }: NavBarProps) {
                     size="sm"
                     className="cursor-pointer border-white/80 bg-white/70 text-slate-700 hover:bg-white"
                   >
-                    {t('Common.login')}
+                    Start for free
                   </Button>
                 </LoginWrapper>
-                <LocaleLink
-                  href={Routes.Register}
-                  className={cn(
-                    buttonVariants({
-                      variant: 'default',
-                      size: 'sm',
-                    }),
-                    'bg-slate-900 text-white hover:bg-slate-800'
-                  )}
-                >
-                  {t('Common.signUp')}
-                </LocaleLink>
               </div>
             )}
           </div>

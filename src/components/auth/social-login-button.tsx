@@ -93,7 +93,7 @@ export const SocialLoginButton = ({
 
   return (
     <div className="w-full flex flex-col gap-4">
-      <DividerWithText text={t('or')} />
+      <DividerWithText />
       {websiteConfig.auth.enableGoogleLogin && (
         <Button
           size="lg"
