@@ -45,7 +45,7 @@ const cards = [
 
 export default function ScrollStackShowcaseSection() {
   return (
-    <section id="scroll-stack-showcase" className="bg-slate-50 px-6 py-24">
+    <section id="scroll-stack-showcase" className="bg-[#8DB6F0] px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <ScrollStack
           className="ai-scroll-stack"

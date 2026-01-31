@@ -247,8 +247,9 @@
   margin: 0 0 6rem;
   padding: 2.5rem;
   border-radius: 32px;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
-  background: #ffffff;
+  box-shadow: 0 20px 45px rgba(30, 60, 110, 0.2);
+  background: #cfe0ff;
+  border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
 @media (min-width: 1024px) {
