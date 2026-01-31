@@ -3,6 +3,7 @@ import {
   CoreFeaturesSection,
   CtaProcessSection,
   FaqProcessSection,
+  GallerySection,
   HowItWorksProcessSection,
   HowItWorksSection,
   InteractiveDemoSection,
@@ -18,6 +19,7 @@ export default function SectionsPreviewPage() {
       <SolutionHeroSection />
       <LearningCrisisSection />
       <CoreFeaturesSection />
+      <GallerySection />
       <ScrollStackShowcaseSection />
       <HowItWorksProcessSection />
       <FaqProcessSection />

@@ -9,3 +9,4 @@ export { default as ScrollStackShowcaseSection } from './scroll-stack-showcase';
 export { default as HowItWorksProcessSection } from './how-it-works-process';
 export { default as FaqProcessSection } from './faq-process';
 export { default as CtaProcessSection } from './cta-process';
+export { default as GallerySection } from './gallery-section';
