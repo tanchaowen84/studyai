@@ -77,7 +77,10 @@ export function NavbarMobile({
   return (
     <>
       <div
-        className={cn('flex items-center justify-between', className)}
+        className={cn(
+          'flex items-center justify-between text-slate-900',
+          className
+        )}
         {...other}
       >
         {/* navbar left shows logo */}
@@ -102,7 +105,7 @@ export function NavbarMobile({
             aria-label="Toggle Mobile Menu"
             onClick={handleToggleMobileMenu}
             className="size-8 flex aspect-square h-fit select-none items-center
-              justify-center rounded-md border cursor-pointer"
+              justify-center rounded-md border border-white/70 bg-white/70 text-slate-700 cursor-pointer"
           >
             {open ? (
               <XIcon className="size-4" />
@@ -147,7 +150,7 @@ function MainMobileMenu({ userLoggedIn, onLinkClicked }: MainMobileMenuProps) {
   return (
     <div
       className="fixed w-full inset-0 z-50 mt-[64px] overflow-y-auto
-      bg-background backdrop-blur-md animate-in fade-in-0"
+      bg-[#8DB6F0] backdrop-blur-md animate-in fade-in-0"
     >
       <div className="size-full flex flex-col items-start space-y-4">
         {/* action buttons */}
@@ -161,7 +164,7 @@ function MainMobileMenu({ userLoggedIn, onLinkClicked }: MainMobileMenuProps) {
                   variant: 'outline',
                   size: 'lg',
                 }),
-                'w-full'
+                'w-full border-white/80 bg-white/70 text-slate-700 hover:bg-white'
               )}
             >
               {t('Common.login')}
@@ -173,7 +176,7 @@ function MainMobileMenu({ userLoggedIn, onLinkClicked }: MainMobileMenuProps) {
                   variant: 'default',
                   size: 'lg',
                 }),
-                'w-full'
+                'w-full bg-slate-900 text-white hover:bg-slate-800'
               )}
               onClick={onLinkClicked}
             >
@@ -215,11 +218,11 @@ function MainMobileMenu({ userLoggedIn, onLinkClicked }: MainMobileMenuProps) {
                         variant="ghost"
                         className={cn(
                           'flex w-full !pl-2 items-center justify-between text-left',
-                          'bg-transparent text-muted-foreground cursor-pointer',
-                          'hover:bg-transparent hover:text-foreground',
-                          'focus:bg-transparent focus:text-foreground',
+                          'bg-transparent text-slate-700/80 cursor-pointer',
+                          'hover:bg-transparent hover:text-slate-900',
+                          'focus:bg-transparent focus:text-slate-900',
                           isActive &&
-                            'font-semibold bg-transparent text-foreground'
+                            'font-semibold bg-transparent text-slate-900'
                         )}
                       >
                         <span className="text-base">{item.title}</span>
@@ -250,22 +253,22 @@ function MainMobileMenu({ userLoggedIn, onLinkClicked }: MainMobileMenuProps) {
                                 className={cn(
                                   buttonVariants({ variant: 'ghost' }),
                                   'group h-auto w-full justify-start gap-4 p-1 !pl-0 !pr-3',
-                                  'bg-transparent text-muted-foreground cursor-pointer',
-                                  'hover:bg-transparent hover:text-foreground',
-                                  'focus:bg-transparent focus:text-foreground',
+                                  'bg-transparent text-slate-700/80 cursor-pointer',
+                                  'hover:bg-transparent hover:text-slate-900',
+                                  'focus:bg-transparent focus:text-slate-900',
                                   isSubItemActive &&
-                                    'font-semibold bg-transparent text-foreground'
+                                    'font-semibold bg-transparent text-slate-900'
                                 )}
                                 onClick={onLinkClicked}
                               >
                                 <div
                                   className={cn(
                                     'flex size-8 shrink-0 items-center justify-center transition-colors ml-0',
-                                    'bg-transparent text-muted-foreground',
-                                    'group-hover:bg-transparent group-hover:text-foreground',
-                                    'group-focus:bg-transparent group-focus:text-foreground',
+                                    'bg-transparent text-slate-600',
+                                    'group-hover:bg-transparent group-hover:text-slate-900',
+                                    'group-focus:bg-transparent group-focus:text-slate-900',
                                     isSubItemActive &&
-                                      'bg-transparent text-foreground'
+                                      'bg-transparent text-slate-900'
                                   )}
                                 >
                                   {subItem.icon ? subItem.icon : null}
@@ -273,11 +276,11 @@ function MainMobileMenu({ userLoggedIn, onLinkClicked }: MainMobileMenuProps) {
                                 <div className="flex-1">
                                   <span
                                     className={cn(
-                                      'text-sm text-muted-foreground',
-                                      'group-hover:bg-transparent group-hover:text-foreground',
-                                      'group-focus:bg-transparent group-focus:text-foreground',
+                                      'text-sm text-slate-700/80',
+                                      'group-hover:bg-transparent group-hover:text-slate-900',
+                                      'group-focus:bg-transparent group-focus:text-slate-900',
                                       isSubItemActive &&
-                                        'font-semibold bg-transparent text-foreground'
+                                        'font-semibold bg-transparent text-slate-900'
                                     )}
                                   >
                                     {subItem.title}
@@ -300,11 +303,11 @@ function MainMobileMenu({ userLoggedIn, onLinkClicked }: MainMobileMenuProps) {
                                 {subItem.external && (
                                   <ArrowUpRightIcon
                                     className={cn(
-                                      'size-4 shrink-0 text-muted-foreground items-center',
-                                      'group-hover:bg-transparent group-hover:text-foreground',
-                                      'group-focus:bg-transparent group-focus:text-foreground',
+                                      'size-4 shrink-0 text-slate-500 items-center',
+                                      'group-hover:bg-transparent group-hover:text-slate-900',
+                                      'group-focus:bg-transparent group-focus:text-slate-900',
                                       isSubItemActive &&
-                                        'bg-transparent text-foreground'
+                                        'bg-transparent text-slate-900'
                                     )}
                                   />
                                 )}
@@ -323,10 +326,10 @@ function MainMobileMenu({ userLoggedIn, onLinkClicked }: MainMobileMenuProps) {
                     className={cn(
                       buttonVariants({ variant: 'ghost' }),
                       'w-full !pl-2 justify-start cursor-pointer group',
-                      'bg-transparent text-muted-foreground',
-                      'hover:bg-transparent hover:text-foreground',
-                      'focus:bg-transparent focus:text-foreground',
-                      isActive && 'font-semibold bg-transparent text-foreground'
+                      'bg-transparent text-slate-700/80',
+                      'hover:bg-transparent hover:text-slate-900',
+                      'focus:bg-transparent focus:text-slate-900',
+                      isActive && 'font-semibold bg-transparent text-slate-900'
                     )}
                     onClick={onLinkClicked}
                   >

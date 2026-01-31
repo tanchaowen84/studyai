@@ -34,11 +34,11 @@ interface NavBarProps {
 
 const customNavigationMenuTriggerStyle = cn(
   navigationMenuTriggerStyle(),
-  'relative bg-transparent text-muted-foreground cursor-pointer',
-  'hover:bg-accent hover:text-accent-foreground',
-  'focus:bg-accent focus:text-accent-foreground',
-  'data-active:font-semibold data-active:bg-transparent data-active:text-foreground',
-  'data-[state=open]:bg-transparent data-[state=open]:text-foreground'
+  'relative bg-transparent text-slate-700/80 cursor-pointer',
+  'hover:bg-white/60 hover:text-slate-900',
+  'focus:bg-white/60 focus:text-slate-900',
+  'data-active:font-semibold data-active:bg-transparent data-active:text-slate-900',
+  'data-[state=open]:bg-transparent data-[state=open]:text-slate-900'
 );
 
 export function Navbar({ scroll }: NavBarProps) {
@@ -61,9 +61,9 @@ export function Navbar({ scroll }: NavBarProps) {
         'sticky inset-x-0 top-0 z-100 py-4 transition-all duration-300',
         scroll
           ? scrolled
-            ? 'bg-background/80 backdrop-blur-md border-b supports-backdrop-filter:bg-background/60'
-            : 'bg-transparent'
-          : 'border-b bg-background'
+            ? 'bg-[#8DB6F0]/90 backdrop-blur-md border-b border-white/70 supports-backdrop-filter:bg-[#8DB6F0]/80'
+            : 'bg-[#8DB6F0]'
+          : 'border-b border-white/70 bg-[#8DB6F0]'
       )}
     >
       <Container className="px-4">
@@ -73,7 +73,7 @@ export function Navbar({ scroll }: NavBarProps) {
           <div className="flex items-center">
             <LocaleLink href="/" className="flex items-center space-x-2">
               <Logo />
-              <span className="text-xl font-semibold">
+              <span className="text-xl font-semibold text-slate-900">
                 {t('Metadata.name')}
               </span>
             </LocaleLink>
@@ -122,20 +122,20 @@ export function Navbar({ scroll }: NavBarProps) {
                                     className={cn(
                                       'group flex select-none flex-row items-center gap-4 rounded-md',
                                       'p-2 leading-none no-underline outline-hidden transition-colors',
-                                      'hover:bg-accent hover:text-accent-foreground',
-                                      'focus:bg-accent focus:text-accent-foreground',
+                                      'hover:bg-white/70 hover:text-slate-900',
+                                      'focus:bg-white/70 focus:text-slate-900',
                                       isSubItemActive &&
-                                        'bg-accent text-accent-foreground'
+                                        'bg-white/70 text-slate-900'
                                     )}
                                   >
                                     <div
                                       className={cn(
                                         'flex size-8 shrink-0 items-center justify-center transition-colors',
-                                        'bg-transparent text-muted-foreground',
-                                        'group-hover:bg-transparent group-hover:text-foreground',
-                                        'group-focus:bg-transparent group-focus:text-foreground',
+                                        'bg-transparent text-slate-600',
+                                        'group-hover:bg-transparent group-hover:text-slate-900',
+                                        'group-focus:bg-transparent group-focus:text-slate-900',
                                         isSubItemActive &&
-                                          'bg-transparent text-foreground'
+                                          'bg-transparent text-slate-900'
                                       )}
                                     >
                                       {subItem.icon ? subItem.icon : null}
@@ -143,11 +143,11 @@ export function Navbar({ scroll }: NavBarProps) {
                                     <div className="flex-1">
                                       <div
                                         className={cn(
-                                          'text-sm font-medium text-muted-foreground',
-                                          'group-hover:bg-transparent group-hover:text-foreground',
-                                          'group-focus:bg-transparent group-focus:text-foreground',
+                                          'text-sm font-medium text-slate-700',
+                                          'group-hover:bg-transparent group-hover:text-slate-900',
+                                          'group-focus:bg-transparent group-focus:text-slate-900',
                                           isSubItemActive &&
-                                            'bg-transparent text-foreground'
+                                            'bg-transparent text-slate-900'
                                         )}
                                       >
                                         {subItem.title}
@@ -155,11 +155,11 @@ export function Navbar({ scroll }: NavBarProps) {
                                       {subItem.description && (
                                         <div
                                           className={cn(
-                                            'text-sm text-muted-foreground',
-                                            'group-hover:bg-transparent group-hover:text-foreground/80',
-                                            'group-focus:bg-transparent group-focus:text-foreground/80',
+                                            'text-sm text-slate-600',
+                                            'group-hover:bg-transparent group-hover:text-slate-700',
+                                            'group-focus:bg-transparent group-focus:text-slate-700',
                                             isSubItemActive &&
-                                              'bg-transparent text-foreground/80'
+                                              'bg-transparent text-slate-700'
                                           )}
                                         >
                                           {subItem.description}
@@ -169,11 +169,11 @@ export function Navbar({ scroll }: NavBarProps) {
                                     {subItem.external && (
                                       <ArrowUpRightIcon
                                         className={cn(
-                                          'size-4 shrink-0 text-muted-foreground',
-                                          'group-hover:bg-transparent group-hover:text-foreground',
-                                          'group-focus:bg-transparent group-focus:text-foreground',
+                                          'size-4 shrink-0 text-slate-500',
+                                          'group-hover:bg-transparent group-hover:text-slate-900',
+                                          'group-focus:bg-transparent group-focus:text-slate-900',
                                           isSubItemActive &&
-                                            'bg-transparent text-foreground'
+                                            'bg-transparent text-slate-900'
                                         )}
                                       />
                                     )}
@@ -227,7 +227,7 @@ export function Navbar({ scroll }: NavBarProps) {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="cursor-pointer"
+                    className="cursor-pointer border-white/80 bg-white/70 text-slate-700 hover:bg-white"
                   >
                     {t('Common.login')}
                   </Button>
@@ -238,7 +238,8 @@ export function Navbar({ scroll }: NavBarProps) {
                     buttonVariants({
                       variant: 'default',
                       size: 'sm',
-                    })
+                    }),
+                    'bg-slate-900 text-white hover:bg-slate-800'
                   )}
                 >
                   {t('Common.signUp')}
