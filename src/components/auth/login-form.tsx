@@ -43,7 +43,7 @@ export const LoginForm = ({
     >
       <FormError message={error || urlError || undefined} />
       <FormSuccess message={success} />
-      <p className="text-sm text-muted-foreground text-center">
+      <p className="text-sm text-slate-600 text-center">
         Please sign in with Google or GitHub.
       </p>
       <div className="mt-4">
