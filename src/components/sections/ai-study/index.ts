@@ -7,3 +7,4 @@ export { default as ComparisonSection } from './comparison';
 export { default as UseCasesSection } from './use-cases';
 export { default as ScrollStackShowcaseSection } from './scroll-stack-showcase';
 export { default as HowItWorksProcessSection } from './how-it-works-process';
+export { default as FaqProcessSection } from './faq-process';
