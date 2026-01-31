@@ -32,7 +32,7 @@ const toneStyles = {
 
 export default function HowItWorksProcessSection() {
   return (
-    <section id="how-it-works-process" className="bg-[#8DB6F0] px-6 py-24">
+    <section id="how-it-works-process" className="bg-[#C1D6FA] px-6 py-24">
       <div className="mx-auto max-w-6xl text-center">
         <span className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-700/80">
           The Process
@@ -49,7 +49,7 @@ export default function HowItWorksProcessSection() {
           {steps.map((step) => (
             <div
               key={step.title}
-              className="flex h-full min-h-[320px] flex-col rounded-[36px] border border-white/70 bg-[#CFE0FF] p-8 text-left shadow-[0_20px_45px_rgba(30,60,110,0.2)] sm:min-h-[360px]"
+              className="flex h-full min-h-[320px] flex-col rounded-[36px] border border-white/70 bg-[#ECF2FF] p-8 text-left shadow-[0_20px_45px_rgba(30,60,110,0.2)] sm:min-h-[360px]"
             >
               <div
                 className={`flex h-12 w-12 items-center justify-center rounded-2xl shadow-[0_6px_18px_rgba(30,60,110,0.18)] ${toneStyles[step.tone]}`}

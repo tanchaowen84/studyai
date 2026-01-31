@@ -15,7 +15,7 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
   const isSingleSection = footerLinks.length === 1;
 
   return (
-    <footer className={cn('border-t border-white/70 bg-[#8DB6F0]', className)}>
+    <footer className={cn('border-t border-white/70 bg-[#C1D6FA]', className)}>
       <Container className="px-4">
         <div className="grid grid-cols-2 gap-8 py-16 md:grid-cols-6">
           <div className="flex flex-col items-start col-span-full md:col-span-2">

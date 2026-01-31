@@ -43,7 +43,7 @@ const faqs = [
 
 export default function FaqProcessSection() {
   return (
-    <section id="faq-process" className="bg-[#8DB6F0] px-6 py-24">
+    <section id="faq-process" className="bg-[#C1D6FA] px-6 py-24">
       <div className="mx-auto grid max-w-5xl items-start gap-12 md:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div className="space-y-6 md:pr-4 lg:pr-8">
           <span className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-700/80">

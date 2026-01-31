@@ -30,7 +30,7 @@ const galleryItems = [
 
 export default function GallerySection() {
   return (
-    <section id="gallery" className="bg-[#8DB6F0] px-6 py-24">
+    <section id="gallery" className="bg-[#C1D6FA] px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">

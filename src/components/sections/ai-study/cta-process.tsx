@@ -2,7 +2,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 export default function CtaProcessSection() {
   return (
-    <section id="cta-process" className="bg-[#8DB6F0] px-6 py-24">
+    <section id="cta-process" className="bg-[#C1D6FA] px-6 py-24">
       <div className="mx-auto max-w-5xl">
         <div className="relative grid items-center gap-10 lg:grid-cols-[1.2fr,0.8fr]">
           <div>

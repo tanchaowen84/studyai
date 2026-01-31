@@ -124,7 +124,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <main id="hero" className="relative overflow-hidden bg-[#8DB6F0] pb-16">
+      <main id="hero" className="relative overflow-hidden bg-[#C1D6FA] pb-16">
         <section>
           <div className="relative pt-12">
             <div className="mx-auto max-w-7xl px-6">
@@ -169,7 +169,7 @@ export default function HeroSection() {
             {/* images */}
             <div>
               <div className="relative -mr-56 mt-10 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-16">
-                <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-white/70 bg-[#CFE0FF] p-4 shadow-[0_25px_60px_rgba(30,60,110,0.2)]">
+                <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-white/70 bg-[#ECF2FF] p-4 shadow-[0_25px_60px_rgba(30,60,110,0.2)]">
                   <Image
                     className="relative rounded-2xl border border-white/70"
                     src="https://cdn.flowchartai.org/static/blocks/demo.png"
