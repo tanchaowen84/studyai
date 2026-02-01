@@ -94,13 +94,9 @@ export default function ScrollStackShowcaseSection() {
                     <p className="mt-4 text-base text-slate-600 md:text-lg">
                       {card.description}
                     </p>
-                    <div className="mt-6 space-y-4 text-sm text-slate-700">
-                      {card.subtext.map((line) => (
-                        <p key={line} className="leading-relaxed">
-                          {line}
-                        </p>
-                      ))}
-                    </div>
+                    <p className="mt-6 text-sm leading-relaxed text-slate-700">
+                      {card.subtext.join(' ')}
+                    </p>
                   </div>
                   <div className="mt-8">
                     <button
