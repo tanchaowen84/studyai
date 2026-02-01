@@ -72,12 +72,12 @@ export default function HeroSection() {
       e.preventDefault();
 
       if (!input.trim()) {
-        toast.error('Please enter a description for your flowchart');
+        toast.error(t('input.errors.empty'));
         return;
       }
 
       if (input.trim().length < 5) {
-        toast.error('Please provide a more detailed description');
+        toast.error(t('input.errors.tooShort'));
         return;
       }
 
@@ -95,7 +95,7 @@ export default function HeroSection() {
           });
 
           if (!response.ok) {
-            throw new Error('Failed to create flowchart');
+            throw new Error('Failed to create study session');
           }
 
           const data = await response.json();
@@ -113,8 +113,8 @@ export default function HeroSection() {
           router.push('/canvas');
         }
       } catch (error) {
-        console.error('Error creating flowchart:', error);
-        toast.error('Failed to create new flowchart');
+        console.error('Error creating study session:', error);
+        toast.error(t('input.errors.createFailed'));
         setIsLoading(false);
       }
     },
@@ -147,7 +147,7 @@ export default function HeroSection() {
                         onChange={handleInputChange}
                         onFocus={handleFocus}
                         onBlur={handleBlur}
-                        placeholder="Describe the flowchart you want to create..."
+                        placeholder={t('input.placeholder')}
                         className={inputClassName}
                         disabled={isLoading}
                       />

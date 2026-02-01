@@ -39,7 +39,6 @@ interface HomePageProps {
 export default async function HomePage(props: HomePageProps) {
   const params = await props.params;
   const { locale } = params;
-  const t = await getTranslations('HomePage');
 
   return (
     <>

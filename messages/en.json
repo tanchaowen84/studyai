@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "name": "FlowChart AI",
-    "title": "FlowChart AI – Smart AI Tool to Create Beautiful Flowcharts",
-    "description": "Design professional flowcharts faster with FlowChart AI. Draw, edit, and collaborate in real time using powerful AI tools—no design experience required."
+    "name": "Study AI",
+    "title": "Study AI - flashcards maker and quiz maker for faster learning",
+    "description": "Study AI turns your notes into a personalized plan and adaptive practice so you learn faster."
   },
   "Common": {
     "login": "Log in",
@@ -57,30 +57,30 @@
   "PricePlans": {
     "free": {
       "name": "Free",
-      "description": "Start exploring AI-powered flowchart generation — for free, forever.",
+      "description": "Start with the basics and build your first study plan.",
       "features": {
-        "feature-1": "1 AI request per day",
-        "feature-2": "AI-assisted generation and editing",
-        "feature-3": "Unlimited diagram storage",
-        "feature-4": "Text and image input supported",
+        "feature-1": "Basic plan builder",
+        "feature-2": "Starter flashcards",
+        "feature-3": "Starter quizzes",
+        "feature-4": "Save up to 3 study sets",
         "feature-5": "Community support"
       },
       "limits": {
-        "limit-1": "1 AI request per day",
+        "limit-1": "Limited sessions per week",
         "limit-2": "No technical support",
         "limit-3": "Standard processing speed"
       }
     },
     "hobby": {
       "name": "Hobby",
-      "description": "Great for individuals who need more AI requests and light technical assistance.",
+      "description": "For steady learners who want more sessions and light support.",
       "features": {
-        "feature-1": "500 AI requests per month",
-        "feature-2": "Full access to AI agent for generation and editing",
-        "feature-3": "Unlimited diagram storage",
-        "feature-4": "Text and image input supported",
-        "feature-5": "Email support (24–48h response, max 7 days)",
-        "feature-6": "All generated content belongs to the user"
+        "feature-1": "500 generations per month",
+        "feature-2": "Full access to the plan builder",
+        "feature-3": "Unlimited study set storage",
+        "feature-4": "Text, PDF, and image input",
+        "feature-5": "Email support (24-48h response, max 7 days)",
+        "feature-6": "All generated content belongs to you"
       },
       "limits": {
         "limit-1": "No priority support",
@@ -89,26 +89,26 @@
     },
     "professional": {
       "name": "Professional",
-      "description": "Perfect for power users and professionals who want faster response and priority support.",
+      "description": "For power users who need faster processing and priority help.",
       "features": {
-        "feature-1": "1000 AI requests per month",
-        "feature-2": "Priority AI processing",
-        "feature-3": "Unlimited diagram storage",
-        "feature-4": "Real-time AI-assisted editing",
-        "feature-5": "Email & technical support (under 24h, max 48h)",
-        "feature-6": "Text and image input supported",
-        "feature-7": "All generated content belongs to the user"
+        "feature-1": "1000 generations per month",
+        "feature-2": "Priority processing",
+        "feature-3": "Unlimited study set storage",
+        "feature-4": "Real-time assisted editing",
+        "feature-5": "Email and technical support (under 24h, max 48h)",
+        "feature-6": "Text, PDF, and image input",
+        "feature-7": "All generated content belongs to you"
       },
       "limits": {
-        "limit-1": "For advanced or customized service needs, please contact our team directly",
+        "limit-1": "For custom or enterprise needs, contact our team",
         "limit-2": "Does not include API access or enterprise features"
       }
     },
     "pro": {
       "name": "Pro",
-      "description": "Advanced features for professional users and teams.",
+      "description": "Advanced features for serious learners and teams.",
       "features": {
-        "feature-1": "Unlimited AI requests",
+        "feature-1": "Unlimited generations",
         "feature-2": "Priority processing and support",
         "feature-3": "Advanced collaboration tools",
         "feature-4": "Custom integrations",
@@ -121,10 +121,10 @@
     },
     "lifetime": {
       "name": "Lifetime",
-      "description": "One-time payment for lifetime access to all premium features.",
+      "description": "One-time payment for lifetime access.",
       "features": {
         "feature-1": "Lifetime access to all features",
-        "feature-2": "Unlimited AI requests forever",
+        "feature-2": "Unlimited generations forever",
         "feature-3": "Priority support for life",
         "feature-4": "All future updates included",
         "feature-5": "Advanced collaboration tools",
@@ -596,249 +596,154 @@
     }
   },
   "HomePage": {
-    "title": "MkSaaS",
-    "description": "Make AI SaaS in days, simply and effortlessly",
     "hero": {
-      "title": "Create Beautiful Flowcharts with FlowChart AI",
-      "description": "FlowChart AI helps you transform ideas into detailed, professional flowcharts instantly. Use natural language to design, edit, and collaborate on diagrams—no design skills required.",
-      "introduction": "Introducing FlowChart AI",
-      "primary": "Start Creating",
-      "secondary": "See Demo"
-    },
-    "logocloud": {
-      "title": "Your favorite companies are our partners"
-    },
-    "useCases": {
-      "title": "Use Cases",
-      "subtitle": "Let AI Handle the Heavy Lifting",
-      "description": "FlowChart AI helps you map out complex processes, brainstorm ideas, and build professional diagrams—faster and easier than ever before.",
-      "tryNow": "Start with FlowChart AI",
-      "items": {
-        "item-1": {
-          "title": "Product Management",
-          "description": "Transform product ideas into actionable roadmaps. Create detailed user journey maps, feature prioritization matrices, and sprint planning workflows. AI helps you visualize complex product ecosystems and stakeholder relationships with precision."
-        },
-        "item-2": {
-          "title": "Software Development",
-          "description": "Architect robust systems with confidence. Design microservices architectures, API integration flows, database relationships, and deployment pipelines. Perfect for technical documentation and system design reviews."
-        },
-        "item-3": {
-          "title": "Business Analysis",
-          "description": "Unlock insights through visual process mapping. Create comprehensive business process flows, decision trees, risk assessment matrices, and operational optimization diagrams that drive strategic decisions."
-        },
-        "item-4": {
-          "title": "Education & Training",
-          "description": "Enhance learning through visual storytelling. Build interactive curriculum maps, concept relationship diagrams, assessment workflows, and training progression paths that engage students and improve comprehension."
-        },
-        "item-5": {
-          "title": "Startup Planning",
-          "description": "Turn startup vision into executable strategy. Visualize business model canvases, funding pipelines, go-to-market strategies, and operational workflows. Essential for pitch decks and investor presentations."
-        },
-        "item-6": {
-          "title": "Project Management",
-          "description": "Orchestrate complex projects with clarity. Design project timelines, resource allocation flows, risk mitigation processes, and team collaboration workflows. Keep stakeholders aligned and projects on track."
+      "title": "Study AI that turns notes into flashcards, quizzes, and a real plan.",
+      "description": "Study AI is the flashcards maker and quiz maker that builds a personalized study plan from your materials, adapts to your pace, and keeps you on track every week.",
+      "introduction": "Meet your study copilot",
+      "primary": "Start learning",
+      "secondary": "Watch demo",
+      "input": {
+        "placeholder": "Describe what you want to study...",
+        "errors": {
+          "empty": "Please enter what you want to study",
+          "tooShort": "Please add a little more detail",
+          "createFailed": "Failed to create a new study session"
         }
       }
     },
-    "demo": {
-      "title": "See FlowChart AI in Action",
-      "subtitle": "From Idea to Flowchart in Seconds",
-      "description": "Watch how FlowChart AI turns natural language prompts into precise, presentation-ready flowcharts — no design skills or manual effort needed.",
-      "tryItNow": "Use FlowChart AI Now",
-      "features": {
-        "feature-1": {
-          "title": "Natural Language Input",
-          "description": "Simply describe your process in Language you like — no shapes, templates, or special tools required"
-        },
-        "feature-2": {
-          "title": "AI-Powered Generation",
-          "description": "FlowChart AI Automatically generates clean, logical diagrams based on your input"
-        },
-        "feature-3": {
-          "title": "Instant Editing",
-          "description": "Customize and refine your diagram, Easily adjust elements, add details, and make it your own"
-        }
-      }
+    "videoProcess": {
+      "eyebrow": "Demo",
+      "title": "See Study AI build a plan in minutes.",
+      "description": "Watch a lecture turn into a study plan, a flashcards maker deck, and a quiz maker session you can use right away.",
+      "captionsLabel": "English captions",
+      "fallback": "Your browser does not support the video tag."
     },
-    "howItWorks": {
-      "title": "Start in 3 Easy Steps",
-      "subtitle": "No Experience Needed",
-      "description": "FlowChart AI makes creating flowcharts as simple as typing your thoughts. Whether you're a beginner or a pro, you can go from messy ideas to structured diagrams in minutes—without any design tools.",
+    "howItWorksProcess": {
+      "eyebrow": "The Process",
+      "title": "Study AI in three simple moves.",
+      "description": "Upload materials, set your goal, and get a schedule with practice decks and quizzes.",
       "steps": {
         "step-1": {
-          "title": "Just Type What You Need",
-          "description": "Start by describing your process, structure, or system in natural language. FlowChart AI understands what you mean—even if it's not perfectly written.",
-          "details": [
-            "Describe your workflow in plain English—FlowChart AI handles the diagram generation",
-            "FlowChart AI supports business logic, software systems, and educational use cases",
-            "AI-powered understanding of both concise and complex process descriptions"
-          ]
+          "title": "Add your materials in seconds.",
+          "description": "Drop notes, slides, or a syllabus. We extract the topics and goals.",
+          "button": "Add Materials"
         },
         "step-2": {
-          "title": "FlowChart AI Builds Your Diagram",
-          "description": "FlowChart AI transforms your input into a clean, structured flowchart using intelligent shape detection and layout optimization.",
-          "details": [
-            "Automatically generates accurate diagrams with FlowChart AI’s layout engine",
-            "Optimized visual structure for readability and presentation",
-            "No need to manually draw—FlowChart AI does it all for you"
-          ]
+          "title": "Build the plan and practice.",
+          "description": "It creates a weekly schedule plus practice decks and quizzes for each topic.",
+          "button": "Build My Plan"
         },
         "step-3": {
-          "title": "Edit, Manage & Save",
-          "description": "Make adjustments using FlowChart AI’s intuitive editor. Save diagrams to your personal workspace, manage your flowcharts, and return to refine or export when needed.",
-          "details": [
-            "Edit using FlowChart AI’s drag-and-drop canvas—fast and intuitive",
-            "Organize all your diagrams in a personal FlowChart AI workspace",
-            "Export in Excalidraw format; PNG, SVG, and PDF exports coming soon"
-          ]
+          "title": "Review, test, and adapt daily.",
+          "description": "Track progress, fix weak spots, and reshuffle tomorrow's session.",
+          "button": "Start Studying"
         }
-      },
-      "getStarted": "Using FlowChart AI Now"
-    },
-    "aiCapabilities": {
-      "title": "FlowChart AI Capabilities",
-      "subtitle": "Smarter Diagrams Powered by Advanced AI",
-      "description": "FlowChart AI uses state-of-the-art language models and layout engines to turn your ideas into perfect, presentation-ready flowcharts—fast, accurate, and effortless.",
-      "capability-1": "Natural Language Processing – FlowChart AI understands messy or vague input and translates it into structured diagrams",
-      "capability-2": "Smart Layout Engine – Automatically arranges elements logically and visually for maximum clarity",
-      "capability-3": "AI-Powered Edits – Update and expand existing flowcharts without starting over",
-      "capability-4": "Multi-language Input – Describe your flowcharts in any language you’re comfortable with",
-      "capability-5": "Context-Aware Suggestions – FlowChart AI intelligently recommends diagram elements and connections based on your intent"
-    },
-    "comparison": {
-      "title": "Why Choose FlowChart AI?",
-      "subtitle": "See the Difference",
-      "description": "Compare FlowChart AI with traditional flowchart tools and see why professionals choose us.",
-      "traditional": {
-        "title": "Traditional Tools",
-        "subtitle": "Time-consuming and complex",
-        "item-1": "Hours of manual drawing and positioning",
-        "item-2": "Steep learning curve for complex software",
-        "item-3": "Difficult collaboration and sharing",
-        "item-4": "Manual updates when changes are needed",
-        "item-5": "Limited template and shape libraries",
-        "item-6": "Version control and backup challenges",
-        "item-7": "Expensive licensing and subscription fees",
-        "item-8": "Platform-specific compatibility issues"
-      },
-      "flowchartAi": {
-        "title": "FlowChart AI",
-        "subtitle": "Fast, intelligent, and intuitive",
-        "item-1": "Generate flowcharts in seconds with AI",
-        "item-2": "Natural language input - no training needed",
-        "item-3": "Built-in collaboration and real-time sharing",
-        "item-4": "AI-assisted modifications and updates",
-        "item-5": "Unlimited templates and smart suggestions",
-        "item-6": "Automatic version history and cloud backup",
-        "item-7": "Affordable pricing with generous free tier",
-        "item-8": "Works seamlessly across all devices and browsers"
       }
     },
-    "integration": {
-      "title": "Integrations",
-      "subtitle": "Integrate with your favorite tools",
-      "description": "Connect seamlessly with popular platforms and services to enhance your workflow.",
-      "learnMore": "Learn More",
+    "scrollStack": {
+      "cards": {
+        "card-1": {
+          "title": "Study AI Notes to Mastery",
+          "description": "Condense lectures into clean notes and key takeaways so you can review fast.",
+          "bullets": [
+            "Auto summaries and key terms",
+            "Linked sources for context",
+            "Review-ready formatting"
+          ],
+          "cta": "Try Note Builder"
+        },
+        "card-2": {
+          "title": "Flashcards maker that adapts",
+          "description": "Turn your notes into spaced-repetition decks that update as you learn.",
+          "bullets": [
+            "One-click decks from any upload",
+            "Intervals adjust to your accuracy",
+            "Tag by class, exam, or chapter"
+          ],
+          "cta": "Create Flashcards"
+        },
+        "card-3": {
+          "title": "Quiz maker for real recall",
+          "description": "Build short quizzes from each topic so you practice what you forget.",
+          "bullets": [
+            "Adaptive difficulty and pacing",
+            "Instant explanations and hints",
+            "Weak-spot drills that stick"
+          ],
+          "cta": "Start Quizzing"
+        }
+      }
+    },
+    "gallery": {
+      "eyebrow": "Study Library",
+      "title": "See it at work across subjects.",
+      "description": "From biology to law, Study AI keeps every class organized in one clean workspace.",
+      "button": "View more examples",
       "items": {
         "item-1": {
-          "title": "Google Gemini",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
+          "alt": "Biology notes dashboard"
         },
         "item-2": {
-          "title": "Replit",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
+          "alt": "Psychology flashcards deck"
         },
         "item-3": {
-          "title": "MagicUI",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
+          "alt": "Law case briefs"
         },
         "item-4": {
-          "title": "VSCodium",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
+          "alt": "Chemistry quiz review"
         },
         "item-5": {
-          "title": "MediaWiki",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-6": {
-          "title": "Google PaLM",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
+          "alt": "History study plan"
         }
       }
     },
-    "integration2": {
-      "title": "Integrate with your favorite tools",
-      "description": "Connect seamlessly with popular platforms and services to enhance your workflow.",
-      "primaryButton": "Get Started",
-      "secondaryButton": "See Demo"
+    "pricingProcess": {
+      "eyebrow": "Pricing",
+      "title": "Simple pricing for Study AI.",
+      "description": "Start free and upgrade when you need more sessions, practice, and analytics."
     },
-    "features": {
-      "title": "Features",
-      "subtitle": "AI-Powered Flowchart Creation",
-      "description": "FlowChart AI offers a comprehensive set of features designed to make diagramming effortless, intelligent, and collaborative.",
+    "faqProcess": {
+      "eyebrow": "FAQ",
+      "title": "Study AI questions, answered.",
+      "description": "Everything you need to know about Study AI, the flashcards maker, and the quiz maker.",
+      "button": "Get started",
       "items": {
         "item-1": {
-          "title": "Natural Language to Diagram",
-          "description": "Describe your process or idea in plain language, and let AI instantly turn it into a professional flowchart. No design skills or technical jargon required—just explain your workflow and see it visualized."
+          "question": "What is Study AI?",
+          "answer": "Study AI turns your materials into a study plan and adaptive practice so you learn faster."
         },
         "item-2": {
-          "title": "Personal Workspace & Diagram Library",
-          "description": "Keep all your diagrams organized in one place. Our platform provides a personal workspace where you can access, manage, and continue editing your saved diagrams with ease."
+          "question": "Is the flashcards maker spaced repetition?",
+          "answer": "Yes. It uses spaced repetition and adapts based on your results."
         },
         "item-3": {
-          "title": "Intuitive Drag-and-Drop Editor",
-          "description": "Easily refine and customize your diagram with a user-friendly canvas. Move elements, adjust connections, and apply styles with simple drag-and-drop—no learning curve."
+          "question": "How does the quiz maker work?",
+          "answer": "It builds short, focused quizzes from your notes, then explains answers and ramps difficulty."
         },
         "item-4": {
-          "title": "Export & Integrate Anywhere",
-          "description": "Export your diagrams in Excalidraw format for editing or backup. Support for PNG, SVG, and PDF exports is coming soon to broaden your sharing and presentation options."
-        }
-      }
-    },
-    "features2": {
-      "title": "Features2",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
-      "feature-1": "Product Feature One",
-      "feature-2": "Product Feature Two",
-      "feature-3": "Product Feature Three",
-      "feature-4": "Product Feature Four"
-    },
-    "features3": {
-      "title": "Features3",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
-      "items": {
-        "item-1": {
-          "title": "Product Feature One",
-          "description": "Please write the detailed description of feature one here"
-        },
-        "item-2": {
-          "title": "Product Feature Two",
-          "description": "Please write the detailed description of feature two here"
-        },
-        "item-3": {
-          "title": "Product Feature Three",
-          "description": "Please write the detailed description of feature three here"
-        },
-        "item-4": {
-          "title": "Product Feature Four",
-          "description": "Please write the detailed description of feature four here"
+          "question": "What can I upload to Study AI?",
+          "answer": "Add notes, slides, PDFs, or pasted text. We extract topics and build sessions around them."
         },
         "item-5": {
-          "title": "Product Feature Five",
-          "description": "Please write the detailed description of feature five here"
+          "question": "Does Study AI work for exams and language learning?",
+          "answer": "Yes. It supports exam prep, certifications, and language learning with custom schedules."
         },
         "item-6": {
-          "title": "Product Feature Six",
-          "description": "Please write the detailed description of feature six here"
+          "question": "Can I track progress and weak spots?",
+          "answer": "The system highlights gaps and reshuffles your plan so you spend time where it matters most."
+        },
+        "item-7": {
+          "question": "Is there a free plan?",
+          "answer": "Yes. Start free and upgrade when you want more sessions and storage."
         }
       }
     },
-    "pricing": {
-      "title": "Pricing",
-      "subtitle": "Pricing",
-      "description": "Choose the plan that works best for you"
+    "ctaProcess": {
+      "eyebrow": "Ready to start?",
+      "title": "Start studying with Study AI today.",
+      "description": "Upload your materials and get a plan, flashcards, and quizzes you can finish this week.",
+      "primary": "Start studying",
+      "secondary": "Talk to us"
     },
     "faqs": {
       "title": "FAQ",
@@ -881,106 +786,6 @@
           "answer": "At the moment, FlowChart AI supports text and image inputs only. Support for document uploads including PDF, Markdown, and other formats is under active development."
         }
       }
-    },
-    "testimonials": {
-      "title": "Testimonials",
-      "subtitle": "What our customers are saying",
-      "items": {
-        "item-1": {
-          "name": "Jonathan Yombo",
-          "role": "Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/1.jpg",
-          "quote": "MkSaaS is really extraordinary and very practical, no need to break your head. A real gold mine."
-        },
-        "item-2": {
-          "name": "Yves Kalume",
-          "role": "GDE - Android",
-          "image": "https://randomuser.me/api/portraits/men/6.jpg",
-          "quote": "With no experience in webdesign I just redesigned my entire website in a few minutes with tailwindcss thanks to MkSaaS."
-        },
-        "item-3": {
-          "name": "Yucel Faruksahan",
-          "role": "Tailkits Creator",
-          "image": "https://randomuser.me/api/portraits/men/7.jpg",
-          "quote": "Great work on MkSaaS template. This is one of the best personal website that I have seen so far :)"
-        },
-        "item-4": {
-          "name": "Anonymous author",
-          "role": "Product Manager",
-          "image": "https://randomuser.me/api/portraits/men/8.jpg",
-          "quote": "I downloaded the one of MkSaaS template which is very clear to understand at the start and you could modify the codes/blocks to fit perfectly on your purpose of the page."
-        },
-        "item-5": {
-          "name": "Shekinah Tshiokufila",
-          "role": "Senior Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/4.jpg",
-          "quote": "MkSaaS is redefining the standard of web design, with these blocks it provides an easy and efficient way for those who love beauty but may lack the time to implement it."
-        },
-        "item-6": {
-          "name": "Oketa Fred",
-          "role": "Fullstack Developer",
-          "image": "https://randomuser.me/api/portraits/men/2.jpg",
-          "quote": "I absolutely love MkSaaS! The component blocks are beautifully designed and easy to use, which makes creating a great-looking website a breeze."
-        },
-        "item-7": {
-          "name": "Zeki",
-          "role": "Founder of ChatExtend",
-          "image": "https://randomuser.me/api/portraits/men/5.jpg",
-          "quote": "MkSaaS is the perfect fusion of simplicity and versatility, enabling us to create UIs that are as stunning as they are user-friendly."
-        },
-        "item-8": {
-          "name": "Joseph Kitheka",
-          "role": "Fullstack Developer",
-          "image": "https://randomuser.me/api/portraits/men/9.jpg",
-          "quote": "MkSaaS has transformed the way I develop web applications. Their extensive collection of UI components, blocks, and templates has significantly accelerated my workflow."
-        },
-        "item-9": {
-          "name": "Khatab Wedaa",
-          "role": "MerakiUI Creator",
-          "image": "https://randomuser.me/api/portraits/men/10.jpg",
-          "quote": "MkSaaS is an elegant, clean, and responsive tailwind css components it's very helpful to start fast with your project."
-        },
-        "item-10": {
-          "name": "Rodrigo Aguilar",
-          "role": "TailwindAwesome Creator",
-          "image": "https://randomuser.me/api/portraits/men/11.jpg",
-          "quote": "I love MkSaaS ❤️. The component blocks are well-structured, simple to use, and beautifully designed. It makes it really easy to have a good-looking website in no time."
-        },
-        "item-11": {
-          "name": "Eric Ampire",
-          "role": "@GoogleDevExpert for Android",
-          "image": "https://randomuser.me/api/portraits/men/12.jpg",
-          "quote": "MkSaaS templates are the perfect solution for anyone who wants to create a beautiful and functional website without any web design experience."
-        },
-        "item-12": {
-          "name": "Roland Tubonge",
-          "role": "Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/13.jpg",
-          "quote": "MkSaaS is so well designed that even with a very poor knowledge of web design you can do miracles. Let yourself be seduced!"
-        }
-      }
-    },
-    "stats": {
-      "title": "Stats",
-      "subtitle": "MkSaaS in numbers",
-      "description": "MkSaaS lets you make AI SaaS in days, simply and effortlessly",
-      "items": {
-        "item-1": {
-          "title": "Stars on GitHub"
-        },
-        "item-2": {
-          "title": "Active Users"
-        },
-        "item-3": {
-          "title": "Powered Apps"
-        }
-      }
-    },
-    "calltoaction": {
-      "title": "Ready to Create Amazing Flowcharts?",
-      "description": "Join thousands of users who are already creating professional diagrams with FlowChart AI",
-      "primaryButton": "Start Creating",
-      "secondaryButton": "Learn More"
     }
   },
   "AITextPage": {

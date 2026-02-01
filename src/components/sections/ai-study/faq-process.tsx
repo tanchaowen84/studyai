@@ -2,64 +2,60 @@
 
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { Minus, Plus } from 'lucide-react';
-
-const faqs = [
-  {
-    question: 'How much can I earn donating plasma?',
-    answer:
-      'Earnings vary by location and promotions. Most donors can expect a predictable payout that increases with consistent visits.',
-  },
-  {
-    question: 'Am I eligible to donate plasma?',
-    answer:
-      'Most healthy adults ages 18-65 can donate. You will complete a screening before your first donation, including health checks and a brief exam.',
-  },
-  {
-    question: 'How often can I donate and how long does it take?',
-    answer:
-      'Donation typically takes about an hour. Most donors can donate up to twice per week with at least one day between visits.',
-  },
-  {
-    question: 'What exactly is plasma and how does it help people?',
-    answer:
-      'Plasma is the liquid part of blood. It is used to create therapies for patients with immune disorders and other critical conditions.',
-  },
-  {
-    question: 'Is plasma donation safe?',
-    answer:
-      'Yes. Donation centers follow strict safety protocols. Single-use, sterile equipment is used every time.',
-  },
-  {
-    question: 'How do I schedule appointments and track my earnings?',
-    answer:
-      'Everything is handled in the app: book appointments, check in, and track earnings in one place.',
-  },
-  {
-    question: 'What should I expect during my first visit?',
-    answer:
-      'Your first visit includes a health screening and a short overview of the process. Staff will guide you through each step.',
-  },
-] as const;
+import { useTranslations } from 'next-intl';
 
 export default function FaqProcessSection() {
+  const t = useTranslations('HomePage.faqProcess');
+
+  const faqs = [
+    {
+      question: t('items.item-1.question'),
+      answer: t('items.item-1.answer'),
+    },
+    {
+      question: t('items.item-2.question'),
+      answer: t('items.item-2.answer'),
+    },
+    {
+      question: t('items.item-3.question'),
+      answer: t('items.item-3.answer'),
+    },
+    {
+      question: t('items.item-4.question'),
+      answer: t('items.item-4.answer'),
+    },
+    {
+      question: t('items.item-5.question'),
+      answer: t('items.item-5.answer'),
+    },
+    {
+      question: t('items.item-6.question'),
+      answer: t('items.item-6.answer'),
+    },
+    {
+      question: t('items.item-7.question'),
+      answer: t('items.item-7.answer'),
+    },
+  ] as const;
+
   return (
     <section id="faq-process" className="bg-[#C1D6FA] px-6 py-24">
       <div className="mx-auto grid max-w-5xl items-start gap-12 md:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div className="space-y-6 md:pr-4 lg:pr-8">
           <span className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-700/80">
-            FAQ
+            {t('eyebrow')}
           </span>
           <h2 className="text-balance font-bricolage-grotesque text-4xl font-semibold text-slate-900 md:text-5xl">
-            All the details.
+            {t('title')}
           </h2>
           <p className="text-base text-slate-700/80 md:text-lg">
-            Got a question? We can answer it.
+            {t('description')}
           </p>
           <button
             type="button"
             className="inline-flex items-center justify-center rounded-full border border-white/80 bg-white/70 px-5 py-2 text-xs font-semibold text-slate-700 shadow-[0_8px_20px_rgba(30,60,110,0.15)] transition hover:translate-y-0.5"
           >
-            Join Waitlist
+            {t('button')}
           </button>
         </div>
 

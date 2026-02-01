@@ -3,47 +3,35 @@
 import Image from 'next/image';
 import ScrollStack, { ScrollStackItem } from '@/components/ScrollStack';
 import { CheckCircle2 } from 'lucide-react';
-
-const cards = [
-  {
-    title: 'Text to Mastery Notes',
-    description:
-      'Turn dense course material into clean, structured notes in minutes. Capture key ideas without drowning in highlights.',
-    bullets: [
-      'Auto-generated summaries and key takeaways',
-      'Clean formatting optimized for review',
-      'Source-linked notes you can trust',
-    ],
-    cta: 'Try Note Builder',
-    image: '/images/docs/notebook.png',
-  },
-  {
-    title: 'Adaptive Study Plans',
-    description:
-      'Set your exam date and let the AI plan your sessions. Every week adjusts to your progress automatically.',
-    bullets: [
-      'Daily plans with built-in revision cycles',
-      'Weak-spot detection across topics',
-      'Progress tracking that stays focused',
-    ],
-    cta: 'Build My Plan',
-    image: '/images/docs/banner.png',
-  },
-  {
-    title: 'Practice That Improves',
-    description:
-      'Short, targeted quizzes that adapt as you improve. Spend time where it matters most.',
-    bullets: [
-      'Question difficulty adapts in real time',
-      'Focused drills for specific chapters',
-      'Retention checks that feel lightweight',
-    ],
-    cta: 'Start Practicing',
-    image: '/blocks/charts-light.png',
-  },
-] as const;
+import { useTranslations } from 'next-intl';
 
 export default function ScrollStackShowcaseSection() {
+  const t = useTranslations('HomePage.scrollStack');
+
+  const cards = [
+    {
+      title: t('cards.card-1.title'),
+      description: t('cards.card-1.description'),
+      bullets: t.raw('cards.card-1.bullets') as string[],
+      cta: t('cards.card-1.cta'),
+      image: '/images/docs/notebook.png',
+    },
+    {
+      title: t('cards.card-2.title'),
+      description: t('cards.card-2.description'),
+      bullets: t.raw('cards.card-2.bullets') as string[],
+      cta: t('cards.card-2.cta'),
+      image: '/images/docs/banner.png',
+    },
+    {
+      title: t('cards.card-3.title'),
+      description: t('cards.card-3.description'),
+      bullets: t.raw('cards.card-3.bullets') as string[],
+      cta: t('cards.card-3.cta'),
+      image: '/blocks/charts-light.png',
+    },
+  ] as const;
+
   return (
     <section id="scroll-stack-showcase" className="bg-[#C1D6FA] px-6 py-24">
       <div className="mx-auto max-w-6xl">

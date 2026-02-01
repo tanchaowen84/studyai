@@ -1,28 +1,5 @@
 import { CalendarDays, CreditCard, Store } from 'lucide-react';
-
-const steps = [
-  {
-    title: 'Book in seconds, on your schedule.',
-    description: 'Make money when it works for you.',
-    button: 'Join Waitlist',
-    icon: CalendarDays,
-    tone: 'amber',
-  },
-  {
-    title: 'Come in, donate and get paid.',
-    description: 'Spaces and staff you\'ll want to come back to.',
-    button: 'Join Waitlist',
-    icon: Store,
-    tone: 'blue',
-  },
-  {
-    title: 'Spend or save--all on your cash card.',
-    description: 'Your money, your way, right away.',
-    button: 'Join Waitlist',
-    icon: CreditCard,
-    tone: 'green',
-  },
-] as const;
+import { getTranslations } from 'next-intl/server';
 
 const toneStyles = {
   amber: 'bg-[#F7B84B] text-slate-900',
@@ -30,19 +7,44 @@ const toneStyles = {
   green: 'bg-[#8BD17C] text-slate-900',
 } as const;
 
-export default function HowItWorksProcessSection() {
+export default async function HowItWorksProcessSection() {
+  const t = await getTranslations('HomePage.howItWorksProcess');
+
+  const steps = [
+    {
+      title: t('steps.step-1.title'),
+      description: t('steps.step-1.description'),
+      button: t('steps.step-1.button'),
+      icon: CalendarDays,
+      tone: 'amber',
+    },
+    {
+      title: t('steps.step-2.title'),
+      description: t('steps.step-2.description'),
+      button: t('steps.step-2.button'),
+      icon: Store,
+      tone: 'blue',
+    },
+    {
+      title: t('steps.step-3.title'),
+      description: t('steps.step-3.description'),
+      button: t('steps.step-3.button'),
+      icon: CreditCard,
+      tone: 'green',
+    },
+  ] as const;
+
   return (
     <section id="how-it-works-process" className="bg-[#C1D6FA] px-6 py-24">
       <div className="mx-auto max-w-6xl text-center">
         <span className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-700/80">
-          The Process
+          {t('eyebrow')}
         </span>
         <h2 className="mt-4 text-balance font-bricolage-grotesque text-4xl font-semibold text-slate-900 md:text-5xl">
-          Book it. Donate it. Bank it.
+          {t('title')}
         </h2>
         <p className="mt-4 text-base text-slate-700/80 md:text-lg">
-          Everything happens through your phone--book, check in, track earnings,
-          get paid.
+          {t('description')}
         </p>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
