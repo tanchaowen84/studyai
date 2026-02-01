@@ -524,14 +524,14 @@
     },
     "videoProcess": {
       "eyebrow": "Demo",
-      "title": "See Study AI turn one upload into a study plan.",
+      "title": "See one upload become a ready-to-study plan.",
       "description": "Preview the plan, open your flashcards maker deck, and take a quiz maker round.",
       "captionsLabel": "English captions",
       "fallback": "Your browser does not support the video tag."
     },
     "howItWorksProcess": {
       "eyebrow": "The Process",
-      "title": "Study AI in three simple moves.",
+      "title": "Study AI builds your plan in three fast steps.",
       "description": "Upload materials, set your goal, and get a schedule with practice decks and quizzes that update as you learn.",
       "steps": {
         "step-1": {
@@ -552,7 +552,7 @@
       }
     },
     "scrollStack": {
-      "title": "See how Study AI builds your study flow.",
+      "title": "Study AI turns notes into a complete study flow.",
       "description": "Scroll to explore notes, flashcards, quizzes, plans, and progress.",
       "cards": {
         "card-1": {
@@ -617,7 +617,7 @@
     },
     "gallery": {
       "eyebrow": "Study Library",
-      "title": "See it at work across subjects.",
+      "title": "Keep every subject organized in one workspace.",
       "description": "From biology to law, Study AI keeps every class organized in one clean workspace. Split by semester, exam, or project and keep all progress in one place.",
       "button": "View more examples",
       "items": {
@@ -640,12 +640,12 @@
     },
     "pricingProcess": {
       "eyebrow": "Pricing",
-      "title": "Simple pricing for Study AI.",
+      "title": "Pricing that scales with your workload.",
       "description": "Start free and upgrade when you need more sessions, longer decks, and deeper analytics. Plans scale with your workload."
     },
     "faqProcess": {
       "eyebrow": "FAQ",
-      "title": "Study AI questions, answered.",
+      "title": "Answers for smarter studying.",
       "description": "Everything you need to know about Study AI, the flashcards maker, and the quiz maker.",
       "button": "Get started",
       "items": {
@@ -689,7 +689,7 @@
     },
     "ctaProcess": {
       "eyebrow": "Ready to start?",
-      "title": "Start studying with Study AI today.",
+      "title": "Start learning faster with Study AI today.",
       "description": "Upload your materials and get a plan, flashcards, and quizzes you can finish this week. Spend less time organizing and more time learning.",
       "primary": "Start studying",
       "secondary": "Talk to us"
