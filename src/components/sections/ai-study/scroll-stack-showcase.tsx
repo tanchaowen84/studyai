@@ -58,7 +58,7 @@ export default function ScrollStackShowcaseSection() {
         <ScrollStack
           className="ai-scroll-stack"
           useWindowScroll
-          enableSmoothScroll
+          enableSmoothScroll={false}
           itemDistance={140}
           itemScale={0}
           itemStackDistance={0}
