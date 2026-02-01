@@ -524,7 +524,7 @@
     },
     "videoProcess": {
       "eyebrow": "Demo",
-      "title": "See one upload become a ready-to-study plan.",
+      "title": "Watch one upload become this week's study plan.",
       "description": "Preview the plan, open your flashcards maker deck, and take a quiz maker round.",
       "captionsLabel": "English captions",
       "fallback": "Your browser does not support the video tag."
@@ -640,12 +640,12 @@
     },
     "pricingProcess": {
       "eyebrow": "Pricing",
-      "title": "Pricing that scales with your workload.",
+      "title": "Plans that fit every semester.",
       "description": "Start free and upgrade when you need more sessions, longer decks, and deeper analytics. Plans scale with your workload."
     },
     "faqProcess": {
       "eyebrow": "FAQ",
-      "title": "Answers for smarter studying.",
+      "title": "Questions answered before you start.",
       "description": "Everything you need to know about Study AI, the flashcards maker, and the quiz maker.",
       "button": "Get started",
       "items": {
