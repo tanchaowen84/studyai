@@ -60,11 +60,11 @@ export default function ScrollStackShowcaseSection() {
           useWindowScroll
           enableSmoothScroll={false}
           itemDistance={140}
-          itemScale={0.045}
-          itemStackDistance={26}
+          itemScale={0}
+          itemStackDistance={0}
           stackPosition="18%"
           scaleEndPosition="8%"
-          baseScale={0.9}
+          baseScale={1}
           rotationAmount={0}
           blurAmount={0}
         >
