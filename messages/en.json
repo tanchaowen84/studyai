@@ -470,60 +470,6 @@
         "upgradePlan": "Upgrade Plan",
         "retry": "Retry",
         "errorMessage": "Failed to get data"
-      },
-      "notification": {
-        "title": "Notification",
-        "description": "Manage your notification preferences",
-        "newsletter": {
-          "title": "Newsletter Subscription",
-          "description": "Manage your newsletter subscription preferences",
-          "label": "Subscribe to newsletter",
-          "hint": "You can change your subscription preferences at any time",
-          "emailRequired": "Email is required to subscribe to the newsletter",
-          "subscribeSuccess": "Successfully subscribed to the newsletter",
-          "subscribeFail": "Failed to subscribe to the newsletter",
-          "unsubscribeSuccess": "Successfully unsubscribed from the newsletter",
-          "unsubscribeFail": "Failed to unsubscribe from the newsletter",
-          "error": "An error occurred while updating your subscription"
-        }
-      },
-      "security": {
-        "title": "Security",
-        "description": "Manage your security settings",
-        "updatePassword": {
-          "title": "Change Password",
-          "description": "Enter your current password and a new password",
-          "currentPassword": "Current Password",
-          "currentRequired": "Current password is required",
-          "newPassword": "New Password",
-          "newMinLength": "Password must be at least 8 characters",
-          "hint": "Please use at least 8 characters for password",
-          "showPassword": "Show password",
-          "hidePassword": "Hide password",
-          "success": "Password updated successfully",
-          "fail": "Failed to update password",
-          "saving": "Saving...",
-          "save": "Save"
-        },
-        "resetPassword": {
-          "title": "Reset Password",
-          "description": "Reset password to enable email login",
-          "info": "Resetting your password will allow you to sign in using your email and password in addition to your social login methods. You will receive an email with instructions to reset your password",
-          "button": "Reset Password"
-        },
-        "deleteAccount": {
-          "title": "Delete Account",
-          "description": "Permanently remove your account and all of its contents",
-          "warning": "This action is not reversible, so please continue with caution",
-          "button": "Delete Account",
-          "confirmTitle": "Delete Account",
-          "confirmDescription": "Are you sure you want to delete your account? This action cannot be undone.",
-          "confirm": "Delete",
-          "cancel": "Cancel",
-          "deleting": "Deleting...",
-          "success": "Account deleted successfully",
-          "fail": "Failed to delete account"
-        }
       }
     },
     "upgrade": {
@@ -579,7 +525,7 @@
     "videoProcess": {
       "eyebrow": "Demo",
       "title": "Watch Study AI turn one upload into a week of progress.",
-      "description": "See how one upload becomes a timeline, daily sessions, and practice that gets harder as you improve. In a few minutes you can preview the plan, start the flashcards maker deck, and take the first quiz maker round. Follow the first session, see the reminders, and start studying without building anything from scratch.",
+      "description": "See how one upload becomes a timeline, daily sessions, and practice that gets harder as you improve. In a few minutes you can preview the plan, start the flashcards maker deck, and take the first quiz maker round.",
       "captionsLabel": "English captions",
       "fallback": "Your browser does not support the video tag."
     },
@@ -611,9 +557,9 @@
           "title": "Study AI Notes to Mastery",
           "description": "Condense lectures into clean notes and key takeaways so you can review fast.",
           "subtext": [
-            "Study AI highlights core definitions, formulas, and relationships, then organizes them into sections you can skim before class.",
-            "Keep the original source attached to each note so you can verify context and jump back to the full reading.",
-            "Add your own highlights and let Study AI update the next session automatically."
+            "Study AI highlights core definitions, formulas, and relationships, then groups them into quick-scan sections.",
+            "Keep the source attached to every note so you can jump back to the full reading for context.",
+            "Add your own highlights and the next session updates automatically."
           ],
           "cta": "Try Note Builder"
         },
@@ -621,9 +567,9 @@
           "title": "Flashcards maker that adapts",
           "description": "Turn your notes into spaced-repetition decks that update as you learn.",
           "subtext": [
-            "The flashcards maker pulls terms, concepts, and examples, then groups them by chapter or exam date.",
+            "The flashcards maker pulls terms, concepts, and examples, then organizes decks by chapter or exam date.",
             "As you answer, Study AI adjusts intervals and creates extra cards for weak spots so recall improves faster.",
-            "Mix new cards with reviews so old material stays fresh the week before exams."
+            "Mix new cards with reviews so old material stays fresh right before tests."
           ],
           "cta": "Create Flashcards"
         },
@@ -631,11 +577,39 @@
           "title": "Quiz maker for real recall",
           "description": "Build short quizzes from each topic so you practice what you forget.",
           "subtext": [
-            "The quiz maker mixes multiple choice, short answer, and applied scenarios with instant feedback.",
+            "The quiz maker blends multiple choice, short answer, and applied scenarios with instant feedback.",
             "Study AI tracks accuracy, rewrites missed questions, and recommends the next session automatically.",
-            "Export quizzes or share them with a study group when you want a check-in."
+            "Export quizzes or share them with a study group when you want a quick check-in."
           ],
           "cta": "Start Quizzing"
+        },
+        "card-4": {
+          "title": "Adaptive study plan, not a static checklist",
+          "description": "Map the semester and let the plan flex with your calendar.",
+          "subtext": [
+            "Study AI spreads topics across weeks, then adjusts sessions when you miss a day or change a deadline.",
+            "See the next seven days at a glance and drag sessions to match real life.",
+            "Every plan stays tied to your flashcards maker decks and quiz maker practice."
+          ],
+          "cta": "Build My Plan"
+        },
+        "card-5": {
+          "title": "Session briefs that keep you focused",
+          "description": "Open a session and see what matters most in minutes.",
+          "subtext": [
+            "Each session starts with a crisp brief: goals, estimated time, and the exact materials to review.",
+            "Study AI keeps long readings short by surfacing the pieces linked to today's cards and quizzes."
+          ],
+          "cta": "Preview a Session"
+        },
+        "card-6": {
+          "title": "Progress and weak-spot insights",
+          "description": "Track accuracy, time, and topic coverage across every class.",
+          "subtext": [
+            "Study AI surfaces weak areas early, then schedules extra review before they hurt your score.",
+            "Weekly summaries show what improved, what stalled, and which topics are ready to drop."
+          ],
+          "cta": "See Progress"
         }
       }
     },
@@ -675,11 +649,11 @@
       "items": {
         "item-1": {
           "question": "What is Study AI and who is it for?",
-          "answer": "Study AI is a study copilot for students, professionals, and anyone preparing for exams or certifications. It turns your materials into a personalized plan, flashcards, and quizzes so you can learn with less friction. If you have notes and a deadline, Study AI fits right in."
+          "answer": "Study AI is a study copilot for students, professionals, and anyone preparing for exams or certifications. It turns your materials into a personalized plan, flashcards, and quizzes so you can learn with less friction."
         },
         "item-2": {
           "question": "Is the flashcards maker spaced repetition?",
-          "answer": "Yes. The flashcards maker uses spaced repetition and adapts intervals based on your accuracy and confidence. When you miss a card, it comes back sooner and may be rephrased with an example so the concept sticks. You can edit or delete any card before a session starts."
+          "answer": "Yes. The flashcards maker uses spaced repetition and adapts intervals. When you miss a card, it comes back sooner and may be rephrased with an example so the concept sticks. You can edit or delete any card before a session starts."
         },
         "item-3": {
           "question": "How does the quiz maker work?",
@@ -687,7 +661,7 @@
         },
         "item-4": {
           "question": "What can I upload to Study AI?",
-          "answer": "You can add notes, slides, PDFs, or pasted text. Study AI extracts topics, definitions, and examples, then organizes them into sessions you can complete daily. If your materials are messy, the system cleans them up first and suggests a cleaner outline."
+          "answer": "You can add notes, slides, PDFs, or pasted text. Study AI extracts topics, definitions, and examples, then organizes them into sessions you can complete daily."
         },
         "item-5": {
           "question": "Does Study AI replace my notes?",
@@ -699,7 +673,7 @@
         },
         "item-7": {
           "question": "How long does it take to see results?",
-          "answer": "Most learners notice clearer recall within the first week because the sessions are shorter and more targeted. Consistent daily practice gives the biggest lift, especially before exams. The more you use it, the faster it adapts to your pace."
+          "answer": "Most learners notice clearer recall within the first week because the sessions are shorter and more targeted. The more you use it, the faster it adapts to your pace."
         },
         "item-8": {
           "question": "Is there a free plan?",

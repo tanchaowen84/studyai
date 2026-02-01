@@ -27,6 +27,27 @@ export default function ScrollStackShowcaseSection() {
       description: t('cards.card-3.description'),
       subtext: t.raw('cards.card-3.subtext') as string[],
       cta: t('cards.card-3.cta'),
+      image: '/images/docs/sidebar.png',
+    },
+    {
+      title: t('cards.card-4.title'),
+      description: t('cards.card-4.description'),
+      subtext: t.raw('cards.card-4.subtext') as string[],
+      cta: t('cards.card-4.cta'),
+      image: '/images/docs/sidebar-tabs.png',
+    },
+    {
+      title: t('cards.card-5.title'),
+      description: t('cards.card-5.description'),
+      subtext: t.raw('cards.card-5.subtext') as string[],
+      cta: t('cards.card-5.cta'),
+      image: '/images/blog/post-2.png',
+    },
+    {
+      title: t('cards.card-6.title'),
+      description: t('cards.card-6.description'),
+      subtext: t.raw('cards.card-6.subtext') as string[],
+      cta: t('cards.card-6.cta'),
       image: '/blocks/charts-light.png',
     },
   ] as const;

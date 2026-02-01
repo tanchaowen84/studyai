@@ -15,7 +15,7 @@ export const websiteConfig: WebsiteConfig = {
     },
     mode: {
       defaultMode: 'system',
-      enableSwitch: true,
+      enableSwitch: false,
     },
     images: {
       ogImage: '/og.png',
