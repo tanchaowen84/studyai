@@ -36,6 +36,14 @@ export default function FaqProcessSection() {
       question: t('items.item-7.question'),
       answer: t('items.item-7.answer'),
     },
+    {
+      question: t('items.item-8.question'),
+      answer: t('items.item-8.answer'),
+    },
+    {
+      question: t('items.item-9.question'),
+      answer: t('items.item-9.answer'),
+    },
   ] as const;
 
   return (

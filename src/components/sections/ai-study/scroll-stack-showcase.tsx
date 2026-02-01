@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import ScrollStack, { ScrollStackItem } from '@/components/ScrollStack';
-import { CheckCircle2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export default function ScrollStackShowcaseSection() {
@@ -12,21 +11,21 @@ export default function ScrollStackShowcaseSection() {
     {
       title: t('cards.card-1.title'),
       description: t('cards.card-1.description'),
-      bullets: t.raw('cards.card-1.bullets') as string[],
+      subtext: t.raw('cards.card-1.subtext') as string[],
       cta: t('cards.card-1.cta'),
       image: '/images/docs/notebook.png',
     },
     {
       title: t('cards.card-2.title'),
       description: t('cards.card-2.description'),
-      bullets: t.raw('cards.card-2.bullets') as string[],
+      subtext: t.raw('cards.card-2.subtext') as string[],
       cta: t('cards.card-2.cta'),
       image: '/images/docs/banner.png',
     },
     {
       title: t('cards.card-3.title'),
       description: t('cards.card-3.description'),
-      bullets: t.raw('cards.card-3.bullets') as string[],
+      subtext: t.raw('cards.card-3.subtext') as string[],
       cta: t('cards.card-3.cta'),
       image: '/blocks/charts-light.png',
     },
@@ -59,14 +58,13 @@ export default function ScrollStackShowcaseSection() {
                     <p className="mt-4 text-base text-slate-600 md:text-lg">
                       {card.description}
                     </p>
-                    <ul className="mt-6 space-y-3 text-sm text-slate-700">
-                      {card.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-start gap-3">
-                          <CheckCircle2 className="mt-0.5 h-5 w-5 text-blue-500" />
-                          <span>{bullet}</span>
-                        </li>
+                    <div className="mt-6 space-y-4 text-sm text-slate-700">
+                      {card.subtext.map((line) => (
+                        <p key={line} className="leading-relaxed">
+                          {line}
+                        </p>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                   <div className="mt-8">
                     <button

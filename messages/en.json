@@ -52,48 +52,6 @@
     "CheckoutButton": {
       "loading": "Loading...",
       "checkoutFailed": "Failed to open checkout page"
-    },
-    "faqs": {
-      "title": "FAQ",
-      "subtitle": "Frequently Asked Questions",
-      "items": {
-        "item-1": {
-          "question": "Is there a free version of FlowChart AI?",
-          "answer": "Yes. FlowChart AI is open-sourced under the MIT License and available on GitHub. You can self-host and modify it freely. We also offer a free tier — every registered user can generate one AI flowchart per day for free."
-        },
-        "item-2": {
-          "question": "What formats can I export my diagrams to?",
-          "answer": "Currently, we support exporting flowcharts in Excalidraw format only. In future updates, we plan to add support for PDF, PNG, and SVG formats."
-        },
-        "item-3": {
-          "question": "Can I manage my flowcharts and access them later?",
-          "answer": "Yes. FlowChart AI provides a personal workspace where you can save, manage, and edit your flowcharts anytime, from anywhere."
-        },
-        "item-4": {
-          "question": "What AI capabilities does FlowChart AI offer?",
-          "answer": "FlowChart AI allows users to describe their processes or workflows in natural language. The AI interprets the input, handles intelligent layout and diagram structure, and generates editable flowcharts accordingly."
-        },
-        "item-5": {
-          "question": "How can I upgrade or change my plan?",
-          "answer": "Yes. You can freely upgrade, downgrade, or cancel your plan through your account's billing settings."
-        },
-        "item-6": {
-          "question": "How complex of a flowchart can FlowChart AI generate?",
-          "answer": "There is no strict limit on the complexity of flowcharts. The actual capability depends on the content and structure of your input."
-        },
-        "item-7": {
-          "question": "How do I write effective prompts?",
-          "answer": "Use clear natural language and structured steps. You may optionally upload reference images to aid AI understanding. FlowChart AI will then convert your input into a structured diagram."
-        },
-        "item-8": {
-          "question": "Can teams collaborate on flowcharts?",
-          "answer": "Currently, FlowChart AI is built for individual use. Team collaboration and shared workspaces are part of our future roadmap."
-        },
-        "item-9": {
-          "question": "Can I generate diagrams from uploaded documents?",
-          "answer": "At the moment, FlowChart AI supports text and image inputs only. Support for document uploads including PDF, Markdown, and other formats is under active development."
-        }
-      }
     }
   },
   "PricePlans": {
@@ -604,8 +562,8 @@
   },
   "HomePage": {
     "hero": {
-      "title": "Study AI that turns notes into flashcards, quizzes, and a real plan.",
-      "description": "Study AI is the flashcards maker and quiz maker that builds a personalized study plan from your materials, adapts to your pace, and keeps you on track every week.",
+      "title": "Study AI helps you learn faster, every day.",
+      "description": "Your plan, flashcards maker decks, and quiz maker practice in minutes.",
       "introduction": "Meet your study copilot",
       "primary": "Start learning",
       "secondary": "Watch demo",
@@ -620,29 +578,29 @@
     },
     "videoProcess": {
       "eyebrow": "Demo",
-      "title": "See Study AI build a plan in minutes.",
-      "description": "Watch a lecture turn into a study plan, a flashcards maker deck, and a quiz maker session you can use right away.",
+      "title": "Watch Study AI turn one upload into a week of progress.",
+      "description": "See how one upload becomes a timeline, daily sessions, and practice that gets harder as you improve. In a few minutes you can preview the plan, start the flashcards maker deck, and take the first quiz maker round. Follow the first session, see the reminders, and start studying without building anything from scratch.",
       "captionsLabel": "English captions",
       "fallback": "Your browser does not support the video tag."
     },
     "howItWorksProcess": {
       "eyebrow": "The Process",
       "title": "Study AI in three simple moves.",
-      "description": "Upload materials, set your goal, and get a schedule with practice decks and quizzes.",
+      "description": "Upload materials, set your goal, and get a schedule with practice decks and quizzes that update as you learn. Study AI keeps the workload realistic for your calendar.",
       "steps": {
         "step-1": {
           "title": "Add your materials in seconds.",
-          "description": "Drop notes, slides, or a syllabus. We extract the topics and goals.",
+          "description": "Drop notes, slides, or a syllabus and Study AI pulls out the topics, definitions, and exam dates. You can also paste a prompt if you only have a rough outline. Tag the class, choose a deadline, and you are ready.",
           "button": "Add Materials"
         },
         "step-2": {
           "title": "Build the plan and practice.",
-          "description": "It creates a weekly schedule plus practice decks and quizzes for each topic.",
+          "description": "Study AI builds a weekly plan plus a flashcards maker deck and a quiz maker set for every module. It spaces reviews so hard topics come back more often. Adjust the pace or rearrange sessions before you start.",
           "button": "Build My Plan"
         },
         "step-3": {
           "title": "Review, test, and adapt daily.",
-          "description": "Track progress, fix weak spots, and reshuffle tomorrow's session.",
+          "description": "Each session ends with quick checks and explanations, then Study AI reshuffles tomorrow based on accuracy and time. You always know what to do next. Over time the plan gets shorter and sharper.",
           "button": "Start Studying"
         }
       }
@@ -652,30 +610,30 @@
         "card-1": {
           "title": "Study AI Notes to Mastery",
           "description": "Condense lectures into clean notes and key takeaways so you can review fast.",
-          "bullets": [
-            "Auto summaries and key terms",
-            "Linked sources for context",
-            "Review-ready formatting"
+          "subtext": [
+            "Study AI highlights core definitions, formulas, and relationships, then organizes them into sections you can skim before class.",
+            "Keep the original source attached to each note so you can verify context and jump back to the full reading.",
+            "Add your own highlights and let Study AI update the next session automatically."
           ],
           "cta": "Try Note Builder"
         },
         "card-2": {
           "title": "Flashcards maker that adapts",
           "description": "Turn your notes into spaced-repetition decks that update as you learn.",
-          "bullets": [
-            "One-click decks from any upload",
-            "Intervals adjust to your accuracy",
-            "Tag by class, exam, or chapter"
+          "subtext": [
+            "The flashcards maker pulls terms, concepts, and examples, then groups them by chapter or exam date.",
+            "As you answer, Study AI adjusts intervals and creates extra cards for weak spots so recall improves faster.",
+            "Mix new cards with reviews so old material stays fresh the week before exams."
           ],
           "cta": "Create Flashcards"
         },
         "card-3": {
           "title": "Quiz maker for real recall",
           "description": "Build short quizzes from each topic so you practice what you forget.",
-          "bullets": [
-            "Adaptive difficulty and pacing",
-            "Instant explanations and hints",
-            "Weak-spot drills that stick"
+          "subtext": [
+            "The quiz maker mixes multiple choice, short answer, and applied scenarios with instant feedback.",
+            "Study AI tracks accuracy, rewrites missed questions, and recommends the next session automatically.",
+            "Export quizzes or share them with a study group when you want a check-in."
           ],
           "cta": "Start Quizzing"
         }
@@ -684,7 +642,7 @@
     "gallery": {
       "eyebrow": "Study Library",
       "title": "See it at work across subjects.",
-      "description": "From biology to law, Study AI keeps every class organized in one clean workspace.",
+      "description": "From biology to law, Study AI keeps every class organized in one clean workspace. Split by semester, exam, or project and keep all progress in one place. Switch between courses without losing momentum or context.",
       "button": "View more examples",
       "items": {
         "item-1": {
@@ -707,7 +665,7 @@
     "pricingProcess": {
       "eyebrow": "Pricing",
       "title": "Simple pricing for Study AI.",
-      "description": "Start free and upgrade when you need more sessions, practice, and analytics."
+      "description": "Start free and upgrade when you need more sessions, longer decks, and deeper analytics. Plans scale with your workload, not with confusing limits. Pause or switch tiers as your semester changes."
     },
     "faqProcess": {
       "eyebrow": "FAQ",
@@ -716,39 +674,47 @@
       "button": "Get started",
       "items": {
         "item-1": {
-          "question": "What is Study AI?",
-          "answer": "Study AI turns your materials into a study plan and adaptive practice so you learn faster."
+          "question": "What is Study AI and who is it for?",
+          "answer": "Study AI is a study copilot for students, professionals, and anyone preparing for exams or certifications. It turns your materials into a personalized plan, flashcards, and quizzes so you can learn with less friction. If you have notes and a deadline, Study AI fits right in."
         },
         "item-2": {
           "question": "Is the flashcards maker spaced repetition?",
-          "answer": "Yes. It uses spaced repetition and adapts based on your results."
+          "answer": "Yes. The flashcards maker uses spaced repetition and adapts intervals based on your accuracy and confidence. When you miss a card, it comes back sooner and may be rephrased with an example so the concept sticks. You can edit or delete any card before a session starts."
         },
         "item-3": {
           "question": "How does the quiz maker work?",
-          "answer": "It builds short, focused quizzes from your notes, then explains answers and ramps difficulty."
+          "answer": "The quiz maker builds short, focused quizzes from your notes and goals. It mixes question types, explains answers, and adjusts difficulty so you stay challenged without getting stuck. You can retake missed questions or generate fresh variants whenever you want."
         },
         "item-4": {
           "question": "What can I upload to Study AI?",
-          "answer": "Add notes, slides, PDFs, or pasted text. We extract topics and build sessions around them."
+          "answer": "You can add notes, slides, PDFs, or pasted text. Study AI extracts topics, definitions, and examples, then organizes them into sessions you can complete daily. If your materials are messy, the system cleans them up first and suggests a cleaner outline."
         },
         "item-5": {
-          "question": "Does Study AI work for exams and language learning?",
-          "answer": "Yes. It supports exam prep, certifications, and language learning with custom schedules."
+          "question": "Does Study AI replace my notes?",
+          "answer": "No. Study AI keeps your original sources and builds a study layer on top of them. You can jump back to the full reading at any time, and you stay in control of what gets included or ignored. Think of it as structure, not a replacement."
         },
         "item-6": {
           "question": "Can I track progress and weak spots?",
-          "answer": "The system highlights gaps and reshuffles your plan so you spend time where it matters most."
+          "answer": "Yes. Study AI tracks accuracy, time, and topic coverage, then highlights weak areas before they hurt your score. Your plan automatically reshuffles so you spend more time on what actually needs work. Weekly summaries show what improved and what still needs attention."
         },
         "item-7": {
+          "question": "How long does it take to see results?",
+          "answer": "Most learners notice clearer recall within the first week because the sessions are shorter and more targeted. Consistent daily practice gives the biggest lift, especially before exams. The more you use it, the faster it adapts to your pace."
+        },
+        "item-8": {
           "question": "Is there a free plan?",
-          "answer": "Yes. Start free and upgrade when you want more sessions and storage."
+          "answer": "Yes. You can start free and build your first plan, flashcards, and quizzes. Upgrade only when you need more sessions, larger decks, or deeper analytics. The free plan is perfect for trying one course or a short sprint."
+        },
+        "item-9": {
+          "question": "Can I use Study AI for group study?",
+          "answer": "You can share plans and export decks or quizzes to study together. Group features are improving, but you already have a clean way to sync what everyone should review. Shared sets stay aligned when you update your materials."
         }
       }
     },
     "ctaProcess": {
       "eyebrow": "Ready to start?",
       "title": "Start studying with Study AI today.",
-      "description": "Upload your materials and get a plan, flashcards, and quizzes you can finish this week.",
+      "description": "Upload your materials and get a plan, flashcards, and quizzes you can finish this week. Spend less time organizing and more time actually learning. Study AI keeps you moving even on busy days.",
       "primary": "Start studying",
       "secondary": "Talk to us"
     }
