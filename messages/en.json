@@ -524,34 +524,36 @@
     },
     "videoProcess": {
       "eyebrow": "Demo",
-      "title": "Watch Study AI turn one upload into a week of progress.",
-      "description": "See how one upload becomes a timeline, daily sessions, and practice that gets harder as you improve. In a few minutes you can preview the plan, start the flashcards maker deck, and take the first quiz maker round.",
+      "title": "See Study AI turn one upload into a study plan.",
+      "description": "Preview the plan, open your flashcards maker deck, and take a quiz maker round.",
       "captionsLabel": "English captions",
       "fallback": "Your browser does not support the video tag."
     },
     "howItWorksProcess": {
       "eyebrow": "The Process",
       "title": "Study AI in three simple moves.",
-      "description": "Upload materials, set your goal, and get a schedule with practice decks and quizzes that update as you learn. Study AI keeps the workload realistic for your calendar.",
+      "description": "Upload materials, set your goal, and get a schedule with practice decks and quizzes that update as you learn.",
       "steps": {
         "step-1": {
           "title": "Add your materials in seconds.",
-          "description": "Drop notes, slides, or a syllabus and Study AI pulls out the topics, definitions, and exam dates. You can also paste a prompt if you only have a rough outline. Tag the class, choose a deadline, and you are ready.",
+          "description": "Drop notes, slides, or a syllabus and Study AI pulls out topics, definitions, and exam dates. Paste a prompt if you only have a rough outline.",
           "button": "Add Materials"
         },
         "step-2": {
           "title": "Build the plan and practice.",
-          "description": "Study AI builds a weekly plan plus a flashcards maker deck and a quiz maker set for every module. It spaces reviews so hard topics come back more often. Adjust the pace or rearrange sessions before you start.",
+          "description": "Study AI builds a weekly plan plus a flashcards maker deck and a quiz maker set for every module. It spaces reviews so hard topics return more often.",
           "button": "Build My Plan"
         },
         "step-3": {
           "title": "Review, test, and adapt daily.",
-          "description": "Each session ends with quick checks and explanations, then Study AI reshuffles tomorrow based on accuracy and time. You always know what to do next. Over time the plan gets shorter and sharper.",
+          "description": "Each session ends with quick checks and explanations, then Study AI reshuffles tomorrow based on accuracy and time. You always know what to do next.",
           "button": "Start Studying"
         }
       }
     },
     "scrollStack": {
+      "title": "See how Study AI builds your study flow.",
+      "description": "Scroll to explore notes, flashcards, quizzes, plans, and progress.",
       "cards": {
         "card-1": {
           "title": "Study AI Notes to Mastery",
@@ -616,7 +618,7 @@
     "gallery": {
       "eyebrow": "Study Library",
       "title": "See it at work across subjects.",
-      "description": "From biology to law, Study AI keeps every class organized in one clean workspace. Split by semester, exam, or project and keep all progress in one place. Switch between courses without losing momentum or context.",
+      "description": "From biology to law, Study AI keeps every class organized in one clean workspace. Split by semester, exam, or project and keep all progress in one place.",
       "button": "View more examples",
       "items": {
         "item-1": {
@@ -639,7 +641,7 @@
     "pricingProcess": {
       "eyebrow": "Pricing",
       "title": "Simple pricing for Study AI.",
-      "description": "Start free and upgrade when you need more sessions, longer decks, and deeper analytics. Plans scale with your workload, not with confusing limits. Pause or switch tiers as your semester changes."
+      "description": "Start free and upgrade when you need more sessions, longer decks, and deeper analytics. Plans scale with your workload."
     },
     "faqProcess": {
       "eyebrow": "FAQ",
@@ -688,7 +690,7 @@
     "ctaProcess": {
       "eyebrow": "Ready to start?",
       "title": "Start studying with Study AI today.",
-      "description": "Upload your materials and get a plan, flashcards, and quizzes you can finish this week. Spend less time organizing and more time actually learning. Study AI keeps you moving even on busy days.",
+      "description": "Upload your materials and get a plan, flashcards, and quizzes you can finish this week. Spend less time organizing and more time learning.",
       "primary": "Start studying",
       "secondary": "Talk to us"
     }

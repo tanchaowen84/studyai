@@ -55,6 +55,14 @@ export default function ScrollStackShowcaseSection() {
   return (
     <section id="scroll-stack-showcase" className="bg-[#C1D6FA] px-6 py-24">
       <div className="mx-auto max-w-6xl">
+        <div className="mb-10 text-center">
+          <h2 className="text-balance font-bricolage-grotesque text-4xl font-semibold text-slate-900 md:text-5xl">
+            {t('title')}
+          </h2>
+          <p className="mt-3 text-base text-slate-700/80 md:text-lg">
+            {t('description')}
+          </p>
+        </div>
         <ScrollStack
           className="ai-scroll-stack"
           useWindowScroll
