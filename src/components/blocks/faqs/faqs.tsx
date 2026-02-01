@@ -19,7 +19,7 @@ type FAQItem = {
 
 export default function FaqSection() {
   const locale = useLocale();
-  const t = useTranslations('HomePage.faqs');
+  const t = useTranslations('PricingPage.faqs');
 
   const faqItems: FAQItem[] = [
     {
