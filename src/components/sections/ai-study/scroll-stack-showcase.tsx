@@ -63,8 +63,12 @@ export default function ScrollStackShowcaseSection() {
           itemScale={0}
           itemStackDistance={0}
           stackPosition="18%"
+          scaleStartPosition="40%"
           scaleEndPosition="8%"
           baseScale={1}
+          enterScaleFrom={1}
+          enterScaleTo={1.04}
+          exitScale={0.96}
           rotationAmount={0}
           blurAmount={0}
         >

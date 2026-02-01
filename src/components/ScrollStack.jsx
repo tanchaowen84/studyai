@@ -12,8 +12,12 @@ const ScrollStack = ({
   itemScale = 0.03,
   itemStackDistance = 30,
   stackPosition = '20%',
+  scaleStartPosition,
   scaleEndPosition = '10%',
   baseScale = 0.85,
+  enterScaleFrom,
+  enterScaleTo,
+  exitScale,
   scaleDuration = 0.5,
   rotationAmount = 0,
   blurAmount = 0,
@@ -99,9 +103,51 @@ const ScrollStack = ({
       const pinStart = cardTop - stackPositionPx - itemStackDistance * i;
       const pinEnd = endElementTop - containerHeight / 2;
 
-      const scaleProgress = calculateProgress(scrollTop, triggerStart, triggerEnd);
-      const targetScale = baseScale + i * itemScale;
-      const scale = 1 - scaleProgress * (1 - targetScale);
+      const useScaleStart =
+        scaleStartPosition !== undefined ||
+        enterScaleFrom !== undefined ||
+        enterScaleTo !== undefined ||
+        exitScale !== undefined;
+
+      let scale = 1;
+
+      if (useScaleStart) {
+        const scaleStartPx = parsePercentage(
+          scaleStartPosition ?? stackPosition,
+          containerHeight
+        );
+        const scaleStart = cardTop - scaleStartPx - itemStackDistance * i;
+        const scaleEnd = cardTop - scaleEndPositionPx;
+        const scaleProgress = calculateProgress(scrollTop, scaleStart, scaleEnd);
+
+        const fromScale = typeof enterScaleFrom === 'number' ? enterScaleFrom : 1;
+        const toScale = typeof enterScaleTo === 'number' ? enterScaleTo : 1.04;
+        const exitScaleValue =
+          typeof exitScale === 'number' ? exitScale : 0.96;
+
+        scale = fromScale + (toScale - fromScale) * scaleProgress;
+
+        if (i < cardsRef.current.length - 1) {
+          const nextCard = cardsRef.current[i + 1];
+          if (nextCard) {
+            const nextTop = getElementOffset(nextCard);
+            const nextScaleStart =
+              nextTop - scaleStartPx - itemStackDistance * (i + 1);
+            const nextScaleEnd = nextTop - scaleEndPositionPx;
+            const nextProgress = calculateProgress(
+              scrollTop,
+              nextScaleStart,
+              nextScaleEnd
+            );
+
+            scale = scale + (exitScaleValue - scale) * nextProgress;
+          }
+        }
+      } else {
+        const scaleProgress = calculateProgress(scrollTop, triggerStart, triggerEnd);
+        const targetScale = baseScale + i * itemScale;
+        scale = 1 - scaleProgress * (1 - targetScale);
+      }
       const rotation = rotationAmount ? i * rotationAmount * scaleProgress : 0;
 
       let blur = 0;
@@ -171,8 +217,12 @@ const ScrollStack = ({
     itemScale,
     itemStackDistance,
     stackPosition,
+    scaleStartPosition,
     scaleEndPosition,
     baseScale,
+    enterScaleFrom,
+    enterScaleTo,
+    exitScale,
     rotationAmount,
     blurAmount,
     useWindowScroll,
