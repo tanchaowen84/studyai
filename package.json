@@ -94,7 +94,7 @@
     "lucide-react": "^0.483.0",
     "mdast-util-toc": "^7.1.0",
     "motion": "^12.4.3",
-    "next": "15.2.1",
+    "next": "15.2.8",
     "next-intl": "^4.0.0",
     "next-plausible": "^3.12.4",
     "next-safe-action": "^7.10.4",
