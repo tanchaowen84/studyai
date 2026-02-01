@@ -1,4 +1,5 @@
 import { DashboardHeader } from '@/components/dashboard/dashboard-header';
+import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 
 interface NotificationsLayoutProps {
@@ -8,6 +9,8 @@ interface NotificationsLayoutProps {
 export default async function NotificationsLayout({
   children,
 }: NotificationsLayoutProps) {
+  notFound();
+
   const t = await getTranslations('Dashboard.settings');
 
   const breadcrumbs = [

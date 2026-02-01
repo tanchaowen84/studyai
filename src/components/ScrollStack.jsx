@@ -19,7 +19,7 @@ const ScrollStack = ({
   blurAmount = 0,
   useWindowScroll = false,
   enableSmoothScroll = true,
-  onStackComplete
+  onStackComplete = undefined
 }) => {
   const scrollerRef = useRef(null);
   const stackCompletedRef = useRef(false);

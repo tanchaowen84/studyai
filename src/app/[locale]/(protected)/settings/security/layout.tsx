@@ -1,4 +1,5 @@
 import { DashboardHeader } from '@/components/dashboard/dashboard-header';
+import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 
 interface SecurityLayoutProps {
@@ -8,6 +9,8 @@ interface SecurityLayoutProps {
 export default async function SecurityLayout({
   children,
 }: SecurityLayoutProps) {
+  notFound();
+
   const t = await getTranslations('Dashboard.settings');
 
   const breadcrumbs = [
