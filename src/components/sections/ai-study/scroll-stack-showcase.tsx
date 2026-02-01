@@ -1,8 +1,8 @@
 'use client';
 
-import Image from 'next/image';
 import ScrollStack, { ScrollStackItem } from '@/components/ScrollStack';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export default function ScrollStackShowcaseSection() {
   const t = useTranslations('HomePage.scrollStack');
@@ -62,18 +62,21 @@ export default function ScrollStackShowcaseSection() {
           itemDistance={140}
           itemScale={0}
           itemStackDistance={0}
-          stackPosition="18%"
-          scaleStartPosition="40%"
+          stackPosition="14%"
+          scaleStartPosition="20%"
           scaleEndPosition="8%"
           baseScale={1}
-          enterScaleFrom={1}
+          enterScaleFrom={0.9}
           enterScaleTo={1.04}
           exitScale={0.96}
           rotationAmount={0}
           blurAmount={0}
         >
           {cards.map((card) => (
-            <ScrollStackItem key={card.title} itemClassName="ai-scroll-stack-card">
+            <ScrollStackItem
+              key={card.title}
+              itemClassName="ai-scroll-stack-card"
+            >
               <div className="grid h-full items-stretch gap-12 lg:grid-cols-2">
                 <div className="flex h-full flex-col justify-between">
                   <div>
