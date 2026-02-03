@@ -1,78 +1,63 @@
-## **MVP v1 — PDF-first Time-Based Learning Loop (English)**
+## **MVP v1 — PDF-first Study Plan + PDF Chat (English)**
 
 ### **One-line promise**
 
-User uploads a Subject’s PDFs → enters total completion time **X hours** → the system generates **modules + Pomodoro sessions** that fit X hours, and enforces a **learn → quiz → confirm → next module** loop.
+User uploads PDFs → the system summarizes and generates a **study plan** → user can **chat with the PDF**. That’s enough to launch. Pomodoro, progress bar, and subject folders come after.
 
 ---
-### **MVP v1 Must-have**
+### **MVP v1 Must-have (Launch Scope)**
 
-#### **1) Subject & PDF Library (Subject container)**
+#### **1) PDF Upload (single subject for v1)**
 
-- Create a **Subject**
-    
-- Upload PDFs into the Subject (multiple PDFs allowed, but keep a limit for MVP)
-    
+- Upload PDFs (multiple PDFs allowed, but keep a limit for MVP)
+
 - PDF list management: rename / delete
 
-#### **2) PDF → Structured Course (course generation)**
+#### **2) PDF → Structured Course (study plan generation)**
 
 - Parse PDFs (text extraction + basic segmentation)
-    
+
 - Generate:
-    
+
     - **Modules** (Module 1..N)
-        
+
     - **Summary** for each module
-    
+
 - Content should be traceable back to the PDF (at least **page range / section range** per module)
-    
-#### **3) Time-Based Course Generation (key differentiator)**
 
-- User inputs total time **X** (e.g., 2h / 3h)
-    
-- System auto-adjusts:
-    
-    - Module granularity (more / fewer modules)
-        
-    - Summary depth (shallower / deeper)
-        
-    - Quiz difficulty
-        
-    - Pomodoro-based session breakdown
-    - 
-- Output: an executable plan where the whole Subject fits within **X hours**
-    
-#### **4) Active Learning Loop (mandatory)**
+#### **3) PDF Chat (core interaction)**
 
-- Study Module 1 → automatic quiz → confirm understanding → unlock Module 2
-    
-- Later-module quizzes:
-    
-    - Mostly focus on the current module
-        
-    - Include some questions from previous modules (built-in revision)
-        
-#### **5) Minimal Progress View**
+- Allow user to ask questions about the PDF and get answers grounded in the uploaded content
 
-- Show: elapsed time / remaining time
-    
-- Show: completed modules count
-    
-- Provide clear “continue” flow across sessions/modules
+- Keep responses traceable to source (page/section references if possible)
 
 ---
 
+### **Post-MVP (v1.1 / v2)**
+
+- **Separate folder for each Subject** (notes + data library)
+
+- **Pomodoro sessions / time-based plan**
+
+- **Progress bar** showing how much of the PDF is remaining
+
+- **Quizzes or flashcards** after the study stage for memory/revision
+
+- **Active learning loop** (learn → quiz → confirm → unlock next module)
+
+- Interleaved revision questions from previous modules
+
+---
 ### **MVP v1 Won’t-have (cut for v1)**
 
 - YouTube / web links / Docs ingestion
-    
-- Separate flashcard product experience (can reuse quiz questions later, but no flashcard UI now)
-    
+
+- Separate flashcard product experience (standalone mode)
+
 - Homework AI / photo solving
-    
+
 - Real website blocking / notification blocking (Focus Mode system-level control)
-    
+
 - Advanced personalization (diagnostic tests, mastery models, knowledge graph)
-    
+
 - Guaranteed support for scanned/image PDFs (OCR)
