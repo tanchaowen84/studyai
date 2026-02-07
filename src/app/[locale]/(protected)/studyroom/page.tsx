@@ -31,7 +31,7 @@ export default function StudyroomPage() {
 
   const hasRoom = Boolean(currentFile);
   const pagePadding = hasRoom
-    ? 'px-6 pt-4 pb-2'
+    ? 'px-5 pt-4 pb-4'
     : 'px-6 py-8';
   const pageHeight = hasRoom
     ? 'h-[100svh]'
@@ -166,7 +166,7 @@ export default function StudyroomPage() {
         </div>
       ) : (
         <div className="grid min-h-0 flex-1 items-stretch gap-0 xl:grid-cols-[minmax(0,1fr)_460px]">
-          <section className="flex min-h-0 flex-col pr-8">
+          <section className="flex min-h-0 flex-col pr-8 pb-4">
             <PdfViewer
               file={currentFile?.file ?? currentFile?.url}
               variant="minimal"
@@ -174,7 +174,7 @@ export default function StudyroomPage() {
             />
           </section>
 
-          <aside className="flex min-h-0 flex-col border-l-2 border-slate-200/70 pl-8">
+          <aside className="flex min-h-0 flex-col border-l-2 border-slate-200/70 pl-8 pb-4">
             <div className="flex items-center gap-2 text-slate-600">
               <MessageCircleIcon className="size-4" />
               <span className="text-sm font-semibold">AI Chat</span>
@@ -201,9 +201,6 @@ export default function StudyroomPage() {
                   </button>
                 </div>
               </div>
-              <p className="mt-3 text-[11px] text-slate-400">
-                Double-check important information.
-              </p>
             </div>
           </aside>
         </div>

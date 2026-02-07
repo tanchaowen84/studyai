@@ -70,7 +70,7 @@ export function PdfViewer({
 
   const fitScale = useMemo(() => {
     if (!isMinimal || !pageSize || !bounds.width || !bounds.height) return 1;
-    const padding = 16;
+    const padding = 8;
     const availableWidth = Math.max(bounds.width - padding, 320);
     const availableHeight = Math.max(bounds.height - padding, 320);
     const widthScale = availableWidth / pageSize.width;
@@ -170,7 +170,7 @@ export function PdfViewer({
       )}
 
       {isMinimal && (
-        <div className="flex items-center justify-end gap-2 text-xs text-slate-400">
+        <div className="ml-auto flex items-center gap-2 rounded-full border border-slate-200/70 bg-[#F5F9FF]/90 px-2 py-1 text-[11px] text-slate-400 shadow-[0_10px_24px_-18px_rgba(15,23,42,0.18)] backdrop-blur">
           <Button
             variant="ghost"
             size="icon"
@@ -203,7 +203,7 @@ export function PdfViewer({
         ref={containerRef}
         className={cn(
           'flex min-h-0 flex-1 items-center justify-center',
-          isMinimal ? 'bg-transparent' : 'rounded-2xl bg-slate-50/70 p-4'
+          isMinimal ? 'bg-transparent pb-6' : 'rounded-2xl bg-slate-50/70 p-4'
         )}
       >
         <Document
@@ -224,7 +224,9 @@ export function PdfViewer({
               setPageSize({ width: viewport.width, height: viewport.height });
             }}
             className={
-              isMinimal ? '' : 'shadow-[0_12px_36px_-28px_rgba(15,23,42,0.35)]'
+              isMinimal
+                ? 'mb-4'
+                : 'shadow-[0_12px_36px_-28px_rgba(15,23,42,0.35)]'
             }
           />
         </Document>
