@@ -18,6 +18,7 @@ interface UploadedFile {
   name: string;
   url: string;
   key: string;
+  file?: File;
 }
 
 const MODULES = ['Overview', 'Core Ideas', 'Examples', 'Practice'];
@@ -35,7 +36,12 @@ export default function DashboardPage() {
 
     try {
       const result = await uploadFileFromBrowser(file, 'study');
-      const uploaded = { name: file.name, url: result.url, key: result.key };
+      const uploaded = {
+        name: file.name,
+        url: result.url,
+        key: result.key,
+        file,
+      };
 
       setFiles((prev) => [uploaded, ...prev]);
       setCurrentFile(uploaded);
@@ -149,7 +155,7 @@ export default function DashboardPage() {
           </div>
 
           <PdfViewer
-            url={currentFile?.url}
+            file={currentFile?.file ?? currentFile?.url}
             title={currentFile?.name}
             className="min-h-[560px]"
           />

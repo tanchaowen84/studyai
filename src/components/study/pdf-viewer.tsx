@@ -38,7 +38,7 @@ const Page = dynamic(
 );
 
 interface PdfViewerProps {
-  url?: string | null;
+  file?: string | File | null;
   title?: string;
   className?: string;
 }
@@ -46,7 +46,7 @@ interface PdfViewerProps {
 const MIN_SCALE = 0.75;
 const MAX_SCALE = 2;
 
-export function PdfViewer({ url, title, className }: PdfViewerProps) {
+export function PdfViewer({ file, title, className }: PdfViewerProps) {
   const [numPages, setNumPages] = useState<number>(0);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [scale, setScale] = useState<number>(1);
@@ -57,7 +57,7 @@ export function PdfViewer({ url, title, className }: PdfViewerProps) {
     return Math.min(bounds.width - 32, 960);
   }, [bounds.width]);
 
-  if (!url) {
+  if (!file) {
     return (
       <div
         className={cn(
@@ -147,7 +147,7 @@ export function PdfViewer({ url, title, className }: PdfViewerProps) {
         className="flex min-h-[520px] flex-1 items-center justify-center rounded-2xl bg-sky-50/60 p-4"
       >
         <Document
-          file={url}
+          file={file}
           onLoadSuccess={({ numPages: total }) => {
             setNumPages(total);
             setPageNumber(1);
