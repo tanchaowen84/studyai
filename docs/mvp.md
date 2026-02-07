@@ -177,3 +177,57 @@
 |                                |                                        | height)   |
 +--------------------------------------------------------------------------------------+
 ```
+
+---
+
+## **Studyroom 项目化设计（讨论结论）**
+
+### **目标**
+
+- 每个上传的 PDF 生成一个独立的学习项目（room）
+- 项目页面采用 `/studyroom/{roomId}` 结构
+- `/studyroom` 作为入口/创建页，同时展示最近项目
+
+---
+
+### **路由结构**
+
+- `/studyroom`：入口 + 创建 + 最近项目列表
+- `/studyroom/{roomId}`：项目内阅读 + AI Chat
+
+---
+
+### **Room 数据结构（建议）**
+
+- `id`：UUID（主键）
+- `title`：可编辑标题（默认取文件名）
+- `fileUrl`：R2 公网访问 URL
+- `fileKey`：R2 对象路径（用于删除/替换/迁移）
+- `pageCount`：页数（用于后续进度）
+- `ownerId`：用户 ID
+- `createdAt` / `updatedAt`
+- `status`：active / archived（可选）
+
+---
+
+### **上传流程**
+
+1. 用户在 `/studyroom` 上传 PDF
+2. 上传至 R2，返回 `fileUrl` + `fileKey`
+3. 创建 room 记录（写入数据库）
+4. **自动跳转**至 `/studyroom/{roomId}`
+
+---
+
+### **关键约束**
+
+- **一个 room 只对应一个 PDF**
+- 保留 `fileKey` 用于后续删除/替换
+- 允许未来扩展“多 PDF 参与 AI 对话”，但不在 MVP 做
+
+---
+
+### **最近项目（Studyroom 首页）**
+
+- 列表展示最近 N 个 room（标题、更新时间、页数/进度）
+- 点击进入对应 `/studyroom/{roomId}`
