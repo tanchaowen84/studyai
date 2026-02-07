@@ -105,6 +105,54 @@
 
 ---
 
+### **页面布局草案（ASCII）**
+
+**1) 学习工作台（阅读 + 模块 + AI Chat）**
+
+```text
++--------------------------------------------------------------------------------------+
+| Logo | Subject Name                                               Credits | Upgrade  |
++--------------------------------------------------------------------------------------+
+| Left: Tools                     | Center: Reader + Modules               | Right: AI |
+|-------------------------------  |----------------------------------------|-----------|
+| [Upload PDF]                    | Modules (top bar)                      | Chat      |
+| [Study Plan]                    | [Module 1] [Module 2] [Module 3] ...   | --------  |
+| [Chat with AI]                  |----------------------------------------| Q/A list  |
+| [Flashcards] (later)            | PDF Reader / Document Viewer           |           |
+| [Quiz] (later)                  | (page nav, zoom, search)               |           |
+| [Progress] (later)              |                                        |           |
+| [Settings]                      |                                        | Input box |
+|-------------------------------- |----------------------------------------|-----------|
+| Recent Files                    |                                        |           |
+| - file-a.pdf                    |                                        |           |
+| - file-b.pdf                    |                                        |           |
++--------------------------------------------------------------------------------------+
+```
+
+**2) Study Sets / 项目管理页**
+
+```text
++--------------------------------------------------------------------------------------+
+| Logo                                      Search 🔍              Folders ▸            |
++--------------------------------------------------------------------------------------+
+| Left: Tools                     | Main: Study Sets                                    |
+|-------------------------------  |----------------------------------------------------|
+| [Study Sets] (active)           | Hey user, what do you wanna master?                 |
+| Solve                           | Upload anything and get interactive study materials |
+| Paper Grader                    |                                                    |
+| App                             |  [ Upload ]   [ Paste ]   [ Record ]                |
+| Quick Guide                     |                                                    |
+|-------------------------------  | All Study Sets                                      |
+| (promo / tips)                  |  [Card 1]   [Card 2]   [Card 3]                      |
+|                                |  - title                                           |
+| User profile                    |  - status chips (unfamiliar / learning / mastered) |
+|                                |  - progress bar                                    |
+|                                |  [Card 4]   [Card 5]   [Card 6]                      |
++--------------------------------------------------------------------------------------+
+```
+
+---
+
 ### **Post‑MVP（v1.1 / v2）**
 
 - **每个 Subject 独立文件夹**（笔记 + 数据）
