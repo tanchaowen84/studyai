@@ -70,7 +70,7 @@ export function PdfViewer({
 
   const fitScale = useMemo(() => {
     if (!isMinimal || !pageSize || !bounds.width || !bounds.height) return 1;
-    const padding = 8;
+    const padding = 24;
     const availableWidth = Math.max(bounds.width - padding, 320);
     const availableHeight = Math.max(bounds.height - padding, 320);
     const widthScale = availableWidth / pageSize.width;
@@ -103,7 +103,7 @@ export function PdfViewer({
     <div
       className={cn(
         isMinimal
-          ? 'flex h-full min-h-0 flex-col gap-4'
+          ? 'flex h-full min-h-0 flex-col'
           : 'flex h-full min-h-0 flex-col gap-4 rounded-[28px] border border-slate-200/70 bg-white/70 p-4',
         className
       )}
@@ -169,43 +169,41 @@ export function PdfViewer({
         </div>
       )}
 
-      {isMinimal && (
-        <div className="ml-auto flex items-center gap-2 rounded-full border border-slate-200/70 bg-[#F5F9FF]/90 px-2 py-1 text-[11px] text-slate-400 shadow-[0_10px_24px_-18px_rgba(15,23,42,0.18)] backdrop-blur">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="h-7 w-7"
-            onClick={() => setPageNumber((prev) => Math.max(prev - 1, 1))}
-            disabled={pageNumber <= 1}
-          >
-            <ChevronLeftIcon className="size-3" />
-          </Button>
-          <span>
-            {pageNumber} / {numPages || '--'}
-          </span>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="h-7 w-7"
-            onClick={() =>
-              setPageNumber((prev) =>
-                numPages ? Math.min(prev + 1, numPages) : prev + 1
-              )
-            }
-            disabled={numPages > 0 && pageNumber >= numPages}
-          >
-            <ChevronRightIcon className="size-3" />
-          </Button>
-        </div>
-      )}
-
       <div
         ref={containerRef}
         className={cn(
           'flex min-h-0 flex-1 items-center justify-center',
-          isMinimal ? 'bg-transparent pb-6' : 'rounded-2xl bg-slate-50/70 p-4'
+          isMinimal
+            ? 'relative bg-transparent pb-6 pt-6'
+            : 'rounded-2xl bg-slate-50/70 p-4'
         )}
       >
+        {isMinimal && (
+          <>
+            <button
+              type="button"
+              className="absolute left-2 top-1/2 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200/70 bg-[#F5F9FF]/90 text-slate-500 shadow-[0_14px_30px_-20px_rgba(15,23,42,0.25)] backdrop-blur transition hover:text-slate-700"
+              onClick={() => setPageNumber((prev) => Math.max(prev - 1, 1))}
+              disabled={pageNumber <= 1}
+              aria-label="Previous page"
+            >
+              <ChevronLeftIcon className="size-4" />
+            </button>
+            <button
+              type="button"
+              className="absolute right-2 top-1/2 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200/70 bg-[#F5F9FF]/90 text-slate-500 shadow-[0_14px_30px_-20px_rgba(15,23,42,0.25)] backdrop-blur transition hover:text-slate-700"
+              onClick={() =>
+                setPageNumber((prev) =>
+                  numPages ? Math.min(prev + 1, numPages) : prev + 1
+                )
+              }
+              disabled={numPages > 0 && pageNumber >= numPages}
+              aria-label="Next page"
+            >
+              <ChevronRightIcon className="size-4" />
+            </button>
+          </>
+        )}
         <Document
           file={file}
           onLoadSuccess={({ numPages: total }) => {
