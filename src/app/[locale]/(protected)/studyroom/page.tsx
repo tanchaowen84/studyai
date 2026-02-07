@@ -1,11 +1,11 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { ChangeEvent } from 'react';
-import { PdfViewer } from '@/components/study/pdf-viewer';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { SidebarTrigger } from '@/components/ui/sidebar';
+import { LocaleLink, useLocaleRouter } from '@/i18n/navigation';
 import { uploadFileFromBrowser } from '@/storage';
 import {
   ArrowUpRightIcon,
@@ -15,27 +15,56 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-interface UploadedFile {
-  name: string;
-  url: string;
-  key: string;
-  file?: File;
+interface StudyRoom {
+  id: string;
+  title: string;
+  fileUrl: string;
+  pageCount: number | null;
+  updatedAt: string;
+  createdAt: string;
 }
 
 export default function StudyroomPage() {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [files, setFiles] = useState<UploadedFile[]>([]);
-  const [currentFile, setCurrentFile] = useState<UploadedFile | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [rooms, setRooms] = useState<StudyRoom[]>([]);
+  const [isLoadingRooms, setIsLoadingRooms] = useState(true);
+  const [roomsError, setRoomsError] = useState<string | null>(null);
+  const router = useLocaleRouter();
 
-  const hasRoom = Boolean(currentFile);
-  const pagePadding = hasRoom
-    ? 'px-5 pt-4 pb-4'
-    : 'px-6 py-8';
-  const pageHeight = hasRoom
-    ? 'h-[100svh]'
-    : 'min-h-[calc(100vh-var(--header-height))]';
+  const pagePadding = 'px-6 py-8';
+  const pageHeight = 'min-h-[calc(100vh-var(--header-height))]';
+
+  useEffect(() => {
+    let isActive = true;
+
+    const loadRooms = async () => {
+      try {
+        const response = await fetch('/api/studyroom');
+        if (!response.ok) {
+          throw new Error('Failed to load rooms');
+        }
+        const data = (await response.json()) as { rooms: StudyRoom[] };
+        if (isActive) {
+          setRooms(data.rooms || []);
+        }
+      } catch (err) {
+        if (isActive) {
+          setRoomsError(err instanceof Error ? err.message : 'Load failed');
+        }
+      } finally {
+        if (isActive) {
+          setIsLoadingRooms(false);
+        }
+      }
+    };
+
+    loadRooms();
+    return () => {
+      isActive = false;
+    };
+  }, []);
 
   const handleUpload = async (file: File) => {
     setIsUploading(true);
@@ -43,15 +72,25 @@ export default function StudyroomPage() {
 
     try {
       const result = await uploadFileFromBrowser(file, 'study');
-      const uploaded = {
-        name: file.name,
-        url: result.url,
-        key: result.key,
-        file,
-      };
+      const response = await fetch('/api/studyroom', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title: file.name.replace(/\.[^/.]+$/, ''),
+          fileUrl: result.url,
+          fileKey: result.key,
+        }),
+      });
 
-      setFiles((prev) => [uploaded, ...prev]);
-      setCurrentFile(uploaded);
+      if (!response.ok) {
+        const payload = (await response.json()) as { error?: string };
+        throw new Error(payload.error || 'Failed to create room');
+      }
+
+      const { id } = (await response.json()) as { id: string };
+      router.push(`/studyroom/${id}`);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Upload failed');
     } finally {
@@ -75,8 +114,7 @@ export default function StudyroomPage() {
       )}
     >
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(120%_120%_at_50%_0%,rgba(187,220,255,0.45)_0%,rgba(248,252,255,0.92)_55%,rgba(245,250,255,1)_100%)]" />
-      {!hasRoom && (
-        <header className="mb-10 flex flex-wrap items-center gap-4 animate-in fade-in-0">
+      <header className="mb-10 flex flex-wrap items-center gap-4 animate-in fade-in-0">
           <div className="flex items-center gap-3">
             <SidebarTrigger className="rounded-full border border-slate-200/60 bg-white/70 p-2 text-slate-500 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.35)] backdrop-blur" />
             <div>
@@ -100,7 +138,6 @@ export default function StudyroomPage() {
             </Button>
           </div>
         </header>
-      )}
 
       <input
         ref={inputRef}
@@ -116,9 +153,8 @@ export default function StudyroomPage() {
         </div>
       ) : null}
 
-      {!hasRoom ? (
-        <div className="max-w-5xl space-y-8 animate-in fade-in-0">
-          <div className="rounded-[32px] border border-slate-200/70 bg-white/70 px-6 py-6 shadow-[0_26px_70px_-60px_rgba(30,64,120,0.55)]">
+      <div className="max-w-5xl space-y-8 animate-in fade-in-0">
+        <div className="rounded-[32px] border border-slate-200/70 bg-white/70 px-6 py-6 shadow-[0_26px_70px_-60px_rgba(30,64,120,0.55)]">
             <div className="flex flex-wrap items-start gap-4">
               <div className="mt-1 flex size-11 items-center justify-center rounded-full bg-slate-100 text-slate-400">
                 <MessageCircleIcon className="size-4" />
@@ -145,66 +181,80 @@ export default function StudyroomPage() {
                 {isUploading ? 'Uploading...' : 'Upload PDF'}
               </Button>
             </div>
+        </div>
+
+        <button
+          type="button"
+          className="group flex w-full flex-col items-center justify-center rounded-[36px] border border-dashed border-slate-300/70 bg-white/50 px-6 py-14 text-center transition hover:border-slate-400"
+          onClick={() => inputRef.current?.click()}
+          disabled={isUploading}
+        >
+          <span className="flex size-12 items-center justify-center rounded-full border border-slate-300/70 bg-white text-slate-400 transition group-hover:text-slate-500">
+            <PlusIcon className="size-5" />
+          </span>
+          <span className="mt-4 text-sm font-medium text-slate-600">
+            Create a room
+          </span>
+          <span className="mt-1 text-xs text-slate-400">
+            Upload a PDF or document to get started
+          </span>
+        </button>
+
+        <section className="space-y-4 pt-2">
+          <div className="flex items-center justify-between">
+            <h2 className="text-sm font-semibold text-slate-700">
+              Recent rooms
+            </h2>
+            {rooms.length > 0 && (
+              <span className="text-xs text-slate-400">
+                {rooms.length} total
+              </span>
+            )}
           </div>
 
-          <button
-            type="button"
-            className="group flex w-full flex-col items-center justify-center rounded-[36px] border border-dashed border-slate-300/70 bg-white/50 px-6 py-14 text-center transition hover:border-slate-400"
-            onClick={() => inputRef.current?.click()}
-            disabled={isUploading}
-          >
-            <span className="flex size-12 items-center justify-center rounded-full border border-slate-300/70 bg-white text-slate-400 transition group-hover:text-slate-500">
-              <PlusIcon className="size-5" />
-            </span>
-            <span className="mt-4 text-sm font-medium text-slate-600">
-              Create a room
-            </span>
-            <span className="mt-1 text-xs text-slate-400">
-              Upload a PDF or document to get started
-            </span>
-          </button>
-        </div>
-      ) : (
-        <div className="grid min-h-0 flex-1 items-stretch gap-0 xl:grid-cols-[minmax(0,1fr)_460px]">
-          <section className="flex min-h-0 flex-col pr-8 pb-4">
-            <PdfViewer
-              file={currentFile?.file ?? currentFile?.url}
-              variant="minimal"
-              className="min-h-0 flex-1"
-            />
-          </section>
+          {roomsError && (
+            <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-600">
+              {roomsError}
+            </div>
+          )}
 
-          <aside className="flex min-h-0 flex-col border-l-2 border-slate-200/70 pl-8 pb-4">
-            <div className="flex items-center gap-2 text-slate-600">
-              <MessageCircleIcon className="size-4" />
-              <span className="text-sm font-semibold">AI Chat</span>
+          {isLoadingRooms ? (
+            <div className="space-y-3">
+              {[0, 1, 2].map((item) => (
+                <div
+                  key={item}
+                  className="h-16 rounded-2xl border border-slate-200/60 bg-white/60"
+                />
+              ))}
             </div>
-            <p className="mt-2 text-xs text-slate-400">
-              Ask about your document. Answers will reference pages.
+          ) : rooms.length === 0 ? (
+            <p className="text-sm text-slate-400">
+              No rooms yet. Upload a PDF to create your first room.
             </p>
-            <div className="mt-6 flex min-h-0 flex-1 flex-col">
-              <div className="min-h-0 flex-1 overflow-y-auto pr-2 text-sm text-slate-400">
-                No messages yet.
-              </div>
-              <div className="mt-4 rounded-[24px] border border-slate-200/70 bg-white/80 px-4 py-3 shadow-[0_18px_50px_-40px_rgba(30,64,120,0.4)]">
-                <div className="flex items-end gap-3">
-                  <textarea
-                    rows={2}
-                    className="flex-1 resize-none bg-transparent text-sm text-slate-600 outline-none placeholder:text-slate-400"
-                    placeholder="Ask a question..."
-                  />
-                  <button
-                    type="button"
-                    className="flex size-9 items-center justify-center rounded-full bg-sky-600/90 text-white shadow-[0_10px_24px_-16px_rgba(14,116,144,0.7)] transition hover:bg-sky-700"
-                  >
-                    <ArrowUpRightIcon className="size-4" />
-                  </button>
-                </div>
-              </div>
+          ) : (
+            <div className="divide-y divide-slate-200/70 rounded-2xl border border-slate-200/60 bg-white/60">
+              {rooms.map((room) => (
+                <LocaleLink
+                  key={room.id}
+                  href={`/studyroom/${room.id}`}
+                  className="flex items-center justify-between gap-4 px-4 py-4 text-sm text-slate-600 transition hover:bg-white/70"
+                >
+                  <div className="min-w-0">
+                    <p className="truncate font-medium text-slate-700">
+                      {room.title}
+                    </p>
+                    <p className="mt-1 text-xs text-slate-400">
+                      Updated{' '}
+                      {new Date(room.updatedAt).toLocaleDateString()}
+                    </p>
+                  </div>
+                  <ArrowUpRightIcon className="size-4 shrink-0 text-slate-400" />
+                </LocaleLink>
+              ))}
             </div>
-          </aside>
-        </div>
-      )}
+          )}
+        </section>
+      </div>
     </div>
   );
 }

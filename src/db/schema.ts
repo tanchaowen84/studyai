@@ -88,3 +88,17 @@ export const creditsHistory = pgTable("credits_history", {
 	createdAt: timestamp('created_at').notNull().defaultNow(),
 	metadata: jsonb('metadata').default('{}'),
 });
+
+export const studyRoom = pgTable('study_room', {
+	id: text('id').primaryKey(),
+	title: text('title').notNull(),
+	fileUrl: text('file_url').notNull(),
+	fileKey: text('file_key').notNull(),
+	pageCount: integer('page_count'),
+	status: text('status').default('active'),
+	ownerId: text('owner_id')
+		.notNull()
+		.references(() => user.id, { onDelete: 'cascade' }),
+	createdAt: timestamp('created_at').notNull().defaultNow(),
+	updatedAt: timestamp('updated_at').notNull().defaultNow(),
+});
