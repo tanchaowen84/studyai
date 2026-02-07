@@ -6,7 +6,6 @@ import {
   BookOpenTextIcon,
   CircleUserRoundIcon,
   CreditCardIcon,
-  FolderIcon,
   Settings2Icon,
   SettingsIcon,
   UsersRoundIcon,
@@ -33,20 +32,8 @@ export function getSidebarLinks(): NestedMenuItem[] {
     {
       title: t('study.title'),
       icon: <BookOpenTextIcon className="size-4 shrink-0" />,
-      items: [
-        {
-          title: t('study.items.studySets'),
-          icon: <FolderIcon className="size-4 shrink-0" />,
-          href: Routes.StudySets,
-          external: false,
-        },
-        {
-          title: t('study.items.workspace'),
-          icon: <BookOpenTextIcon className="size-4 shrink-0" />,
-          href: Routes.Dashboard,
-          external: false,
-        },
-      ],
+      href: Routes.Dashboard,
+      external: false,
     },
     {
       title: t('admin.title'),

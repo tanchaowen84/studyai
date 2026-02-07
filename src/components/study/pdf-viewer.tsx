@@ -61,12 +61,12 @@ export function PdfViewer({ file, title, className }: PdfViewerProps) {
     return (
       <div
         className={cn(
-          'flex h-full min-h-[520px] items-center justify-center rounded-3xl border border-sky-100/80 bg-white/80',
+          'flex h-full min-h-[520px] items-center justify-center rounded-[28px] border border-slate-200/70 bg-white/70',
           className
         )}
       >
         <div className="text-center">
-          <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl bg-sky-50 text-sky-600">
+          <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl bg-slate-100 text-slate-500">
             <span className="text-xs font-semibold">PDF</span>
           </div>
           <p className="text-sm text-slate-600">No PDF yet</p>
@@ -81,13 +81,15 @@ export function PdfViewer({ file, title, className }: PdfViewerProps) {
   return (
     <div
       className={cn(
-        'flex h-full flex-col gap-4 rounded-3xl border border-sky-100/80 bg-white/80 p-4 shadow-[0_12px_40px_-24px_rgba(14,116,144,0.45)]',
+        'flex h-full flex-col gap-4 rounded-[28px] border border-slate-200/70 bg-white/70 p-4',
         className
       )}
     >
       <div className="flex flex-wrap items-center justify-between gap-3 px-1">
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-sky-500">Reading</p>
+          <p className="text-[10px] uppercase tracking-[0.28em] text-slate-400">
+            Reading
+          </p>
           <p className="text-sm font-semibold text-slate-800">
             {title || 'Document'}
           </p>
@@ -96,7 +98,7 @@ export function PdfViewer({ file, title, className }: PdfViewerProps) {
           <span>
             {pageNumber} / {numPages || '--'}
           </span>
-          <div className="flex items-center gap-1 rounded-full border border-sky-100 bg-sky-50/70 px-2 py-1">
+          <div className="flex items-center gap-1 rounded-full border border-slate-200 bg-white/60 px-2 py-1">
             <Button
               variant="ghost"
               size="icon"
@@ -119,7 +121,7 @@ export function PdfViewer({ file, title, className }: PdfViewerProps) {
             >
               <ChevronRightIcon className="size-3" />
             </Button>
-            <div className="mx-1 h-4 w-px bg-sky-200" />
+            <div className="mx-1 h-4 w-px bg-slate-200" />
             <Button
               variant="ghost"
               size="icon"
@@ -144,7 +146,7 @@ export function PdfViewer({ file, title, className }: PdfViewerProps) {
 
       <div
         ref={containerRef}
-        className="flex min-h-[520px] flex-1 items-center justify-center rounded-2xl bg-sky-50/60 p-4"
+        className="flex min-h-[520px] flex-1 items-center justify-center rounded-2xl bg-slate-50/70 p-4"
       >
         <Document
           file={file}
@@ -159,7 +161,7 @@ export function PdfViewer({ file, title, className }: PdfViewerProps) {
             pageNumber={pageNumber}
             width={pageWidth}
             scale={scale}
-            className="shadow-[0_20px_60px_-40px_rgba(30,64,175,0.45)]"
+            className="shadow-[0_12px_36px_-28px_rgba(15,23,42,0.35)]"
           />
         </Document>
       </div>

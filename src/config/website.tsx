@@ -44,7 +44,7 @@ export const websiteConfig: WebsiteConfig = {
     enableBlocksPages: false,
   },
   routes: {
-    defaultLoginRedirect: '/dashboard',
+    defaultLoginRedirect: '/studyroom',
   },
   analytics: {
     enableVercelAnalytics: false,

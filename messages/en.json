@@ -350,14 +350,10 @@
   },
   "Dashboard": {
     "dashboard": {
-      "title": "Workspace"
+      "title": "Studyroom"
     },
     "study": {
-      "title": "Study",
-      "items": {
-        "studySets": "Study Sets",
-        "workspace": "Workspace"
-      }
+      "title": "Studyroom"
     },
     "admin": {
       "title": "Admin",
