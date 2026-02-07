@@ -3,9 +3,10 @@
 import { Routes } from '@/routes';
 import type { NestedMenuItem } from '@/types';
 import {
+  BookOpenTextIcon,
   CircleUserRoundIcon,
   CreditCardIcon,
-  LayoutDashboardIcon,
+  FolderIcon,
   Settings2Icon,
   SettingsIcon,
   UsersRoundIcon,
@@ -30,10 +31,22 @@ export function getSidebarLinks(): NestedMenuItem[] {
 
   return [
     {
-      title: t('dashboard.title'),
-      icon: <LayoutDashboardIcon className="size-4 shrink-0" />,
-      href: Routes.Dashboard,
-      external: false,
+      title: t('study.title'),
+      icon: <BookOpenTextIcon className="size-4 shrink-0" />,
+      items: [
+        {
+          title: t('study.items.studySets'),
+          icon: <FolderIcon className="size-4 shrink-0" />,
+          href: Routes.StudySets,
+          external: false,
+        },
+        {
+          title: t('study.items.workspace'),
+          icon: <BookOpenTextIcon className="size-4 shrink-0" />,
+          href: Routes.Dashboard,
+          external: false,
+        },
+      ],
     },
     {
       title: t('admin.title'),

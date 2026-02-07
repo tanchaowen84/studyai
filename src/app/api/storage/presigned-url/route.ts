@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate content type (optional, based on your requirements)
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+    const allowedTypes = ['application/pdf', 'application/x-pdf'];
     if (!allowedTypes.includes(contentType)) {
       return NextResponse.json(
         { error: 'File type not supported' },

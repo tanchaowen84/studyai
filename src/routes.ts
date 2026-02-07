@@ -26,6 +26,7 @@ export enum Routes {
 
   // dashboard routes
   Dashboard = '/dashboard',
+  StudySets = '/study-sets',
   AdminUsers = '/admin/users',
   SettingsProfile = '/settings/profile',
   SettingsBilling = '/settings/billing',
@@ -67,6 +68,7 @@ export const routesNotAllowedByLoggedInUsers = [Routes.Login, Routes.Register];
  */
 export const protectedRoutes = [
   Routes.Dashboard,
+  Routes.StudySets,
   Routes.AdminUsers,
   Routes.SettingsProfile,
   Routes.SettingsBilling,

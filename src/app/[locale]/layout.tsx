@@ -16,6 +16,8 @@ import type { ReactNode } from 'react';
 import { Toaster } from 'sonner';
 import { Providers } from './providers';
 
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
 import '@/styles/globals.css';
 
 interface LocaleLayoutProps {

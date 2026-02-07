@@ -12,16 +12,16 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'No file provided' }, { status: 400 });
     }
 
-    // Validate file size (max 10MB)
-    if (file.size > 10 * 1024 * 1024) {
+    // Validate file size (max 50MB)
+    if (file.size > 50 * 1024 * 1024) {
       return NextResponse.json(
-        { error: 'File size exceeds the 10MB limit' },
+        { error: 'File size exceeds the 50MB limit' },
         { status: 400 }
       );
     }
 
     // Validate file type (optional, based on your requirements)
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+    const allowedTypes = ['application/pdf', 'application/x-pdf'];
     if (!allowedTypes.includes(file.type)) {
       return NextResponse.json(
         { error: 'File type not supported' },
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
 export const config = {
   api: {
     bodyParser: {
-      sizeLimit: '10mb',
+      sizeLimit: '50mb',
     },
   },
 };
