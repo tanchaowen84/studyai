@@ -129,30 +129,6 @@
 +--------------------------------------------------------------------------------------+
 ```
 
-**2) Study Sets / 项目管理页**
-
-```text
-+--------------------------------------------------------------------------------------+
-| Logo                                      Search 🔍              Folders ▸            |
-+--------------------------------------------------------------------------------------+
-| Left: Tools                     | Main: Study Sets                                    |
-|-------------------------------  |----------------------------------------------------|
-| [Study Sets] (active)           | Hey user, what do you wanna master?                 |
-| Solve                           | Upload anything and get interactive study materials |
-| Paper Grader                    |                                                    |
-| App                             |  [ Upload ]   [ Paste ]   [ Record ]                |
-| Quick Guide                     |                                                    |
-|-------------------------------  | All Study Sets                                      |
-| (promo / tips)                  |  [Card 1]   [Card 2]   [Card 3]                      |
-|                                |  - title                                           |
-| User profile                    |  - status chips (unfamiliar / learning / mastered) |
-|                                |  - progress bar                                    |
-|                                |  [Card 4]   [Card 5]   [Card 6]                      |
-+--------------------------------------------------------------------------------------+
-```
-
----
-
 ### **Post‑MVP（v1.1 / v2）**
 
 - **每个 Subject 独立文件夹**（笔记 + 数据）
@@ -174,8 +150,8 @@
 | Studyroom (active)              | Hey, what do you want to master?                   |
 | (other tools later)             |                                                    |
 |-------------------------------- |  +----------------------------------------------+   |
-| User                            |  | Ask Study Chat a question...              -> |   |
-|                                |  | (type / paste / upload entry)                |   |
+| User                            |  | Ask Studyroom a question / paste notes   -> |   |
+|                                |  | (big input, chat-first entry)                |   |
 |                                |  +----------------------------------------------+   |
 |                                |                                                    |
 |                                |  +----------------------------------------------+   |
@@ -191,12 +167,13 @@
 +--------------------------------------------------------------------------------------+
 | Logo                                      Search 🔍              Profile ▸            |
 +--------------------------------------------------------------------------------------+
-| Left: Tools                     | Center: Reader + Modules               | Right: AI |
+| Left: Tools                     | Center: PDF Reader (clean view)        | Right: AI |
 |-------------------------------  |----------------------------------------|-----------|
-| Studyroom (active)              | Modules (top bar)                      | Chat      |
-| (other tools later)             | [Overview] [Core] [Examples] [Practice]| --------  |
+| Studyroom (active)              | PDF page only (no outer frame)         | Chat      |
+| (other tools later)             | Pagination only (no zoom)              | --------  |
 |-------------------------------- |----------------------------------------| Input box |
-| User                            | PDF Reader / Document Viewer           |           |
-|                                | (page nav, zoom, search)               |           |
+| User                            | Upload button removed (already in room)|           |
+|                                |                                        | (full     |
+|                                |                                        | height)   |
 +--------------------------------------------------------------------------------------+
 ```

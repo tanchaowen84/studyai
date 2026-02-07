@@ -9,7 +9,6 @@ import { SidebarTrigger } from '@/components/ui/sidebar';
 import { uploadFileFromBrowser } from '@/storage';
 import {
   ArrowUpRightIcon,
-  FileTextIcon,
   MessageCircleIcon,
   PlusIcon,
   UploadCloudIcon,
@@ -21,8 +20,6 @@ interface UploadedFile {
   key: string;
   file?: File;
 }
-
-const MODULES = ['Overview', 'Core Ideas', 'Examples', 'Practice'];
 
 export default function StudyroomPage() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -63,10 +60,11 @@ export default function StudyroomPage() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-var(--header-height))] bg-[#F5F9FF] px-6 py-8">
-      <header className="mb-10 flex flex-wrap items-center gap-4">
+    <div className="relative min-h-[calc(100vh-var(--header-height))] overflow-hidden px-6 py-8 text-slate-900">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(120%_120%_at_50%_0%,rgba(187,220,255,0.45)_0%,rgba(248,252,255,0.92)_55%,rgba(245,250,255,1)_100%)]" />
+      <header className="mb-10 flex flex-wrap items-center gap-4 animate-in fade-in-0">
         <div className="flex items-center gap-3">
-          <SidebarTrigger className="rounded-full border border-slate-200/70 bg-white/80 p-2" />
+          <SidebarTrigger className="rounded-full border border-slate-200/60 bg-white/70 p-2 text-slate-500 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.35)] backdrop-blur" />
           <div>
             <p className="text-[10px] uppercase tracking-[0.32em] text-slate-400">
               Studyroom
@@ -77,10 +75,13 @@ export default function StudyroomPage() {
           </div>
         </div>
         <div className="ml-auto flex items-center gap-2">
-          <Badge className="rounded-full bg-white/80 px-3 py-1 text-xs text-slate-500">
+          <Badge
+            variant="outline"
+            className="rounded-full border-slate-200/70 bg-white/70 px-3 py-1 text-[11px] font-medium text-slate-500"
+          >
             7 credits
           </Badge>
-          <Button className="rounded-full bg-sky-600 px-4 text-sm text-white hover:bg-sky-700">
+          <Button className="rounded-full bg-sky-600/90 px-4 text-sm text-white shadow-[0_14px_30px_-18px_rgba(14,116,144,0.75)] hover:bg-sky-700">
             Upgrade
           </Button>
         </div>
@@ -101,24 +102,27 @@ export default function StudyroomPage() {
       ) : null}
 
       {!hasRoom ? (
-        <div className="max-w-4xl space-y-6">
-          <div className="rounded-[28px] border border-slate-200/70 bg-white/80 px-6 py-5">
-            <div className="flex flex-wrap items-center gap-3">
-              <div className="flex size-10 items-center justify-center rounded-full bg-slate-100 text-slate-400">
+        <div className="max-w-5xl space-y-8 animate-in fade-in-0">
+          <div className="rounded-[32px] border border-slate-200/70 bg-white/70 px-6 py-6 shadow-[0_26px_70px_-60px_rgba(30,64,120,0.55)]">
+            <div className="flex flex-wrap items-start gap-4">
+              <div className="mt-1 flex size-11 items-center justify-center rounded-full bg-slate-100 text-slate-400">
                 <MessageCircleIcon className="size-4" />
               </div>
-              <div className="flex min-w-[220px] flex-1 flex-col gap-1">
-                <input
-                  className="w-full bg-transparent text-sm text-slate-600 outline-none"
-                  placeholder="Ask Study Chat a question..."
+              <div className="flex min-w-[240px] flex-1 flex-col gap-3">
+                <textarea
+                  rows={3}
+                  className="w-full resize-none bg-transparent text-sm text-slate-600 outline-none placeholder:text-slate-400 sm:text-base"
+                  placeholder="Ask Studyroom a question or paste your notes..."
                 />
-                <span className="text-[11px] text-slate-400">
-                  Type or paste. Upload a PDF to create a room.
-                </span>
+                <div className="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+                  <span>Ask a question or paste text.</span>
+                  <span className="h-1 w-1 rounded-full bg-slate-300" />
+                  <span>Upload a PDF to create a room.</span>
+                </div>
               </div>
               <Button
                 variant="ghost"
-                className="rounded-full border border-slate-200/70 bg-white px-4 text-sm text-slate-500"
+                className="rounded-full border border-slate-200/70 bg-white/80 px-4 text-sm text-slate-500"
                 onClick={() => inputRef.current?.click()}
                 disabled={isUploading}
               >
@@ -130,11 +134,11 @@ export default function StudyroomPage() {
 
           <button
             type="button"
-            className="group flex w-full flex-col items-center justify-center rounded-[32px] border border-dashed border-slate-300/70 bg-white/60 px-6 py-14 text-center transition hover:border-slate-400"
+            className="group flex w-full flex-col items-center justify-center rounded-[36px] border border-dashed border-slate-300/70 bg-white/50 px-6 py-14 text-center transition hover:border-slate-400"
             onClick={() => inputRef.current?.click()}
             disabled={isUploading}
           >
-            <span className="flex size-12 items-center justify-center rounded-full border border-slate-300/70 bg-white text-slate-400">
+            <span className="flex size-12 items-center justify-center rounded-full border border-slate-300/70 bg-white text-slate-400 transition group-hover:text-slate-500">
               <PlusIcon className="size-5" />
             </span>
             <span className="mt-4 text-sm font-medium text-slate-600">
@@ -146,84 +150,45 @@ export default function StudyroomPage() {
           </button>
         </div>
       ) : (
-        <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_320px]">
-          <section className="flex flex-col gap-5">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <div className="flex flex-wrap items-center gap-2">
-                {MODULES.map((module, index) => (
-                  <Button
-                    key={module}
-                    variant="ghost"
-                    className={
-                      index === 0
-                        ? 'rounded-full bg-sky-600/90 px-4 text-white hover:bg-sky-700'
-                        : 'rounded-full border border-slate-200/80 bg-white/70 px-4 text-slate-500 hover:border-slate-300'
-                    }
-                  >
-                    {module}
-                  </Button>
-                ))}
-              </div>
-              <Button
-                variant="outline"
-                className="rounded-full border-slate-200/70 bg-white/70 text-slate-600"
-                onClick={() => inputRef.current?.click()}
-              >
-                <UploadCloudIcon className="mr-2 size-4" />
-                Upload PDF
-              </Button>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-2">
-              {files.map((file) => (
-                <Button
-                  key={file.key}
-                  variant={
-                    currentFile?.key === file.key ? 'default' : 'outline'
-                  }
-                  size="sm"
-                  className={
-                    currentFile?.key === file.key
-                      ? 'rounded-full bg-sky-600 text-white'
-                      : 'rounded-full border-slate-200 bg-white/70 text-slate-500'
-                  }
-                  onClick={() => setCurrentFile(file)}
-                >
-                  <FileTextIcon className="mr-1 size-3" />
-                  {file.name}
-                </Button>
-              ))}
-            </div>
-
+        <div className="grid gap-0 xl:grid-cols-[minmax(0,1fr)_420px]">
+          <section className="flex flex-col pr-8">
             <PdfViewer
               file={currentFile?.file ?? currentFile?.url}
-              title={currentFile?.name}
-              className="min-h-[560px]"
+              variant="minimal"
+              className="min-h-[720px]"
             />
           </section>
 
-          <aside className="flex flex-col gap-4">
-            <div className="rounded-[28px] border border-slate-200/70 bg-white/80 p-5">
-              <div className="flex items-center gap-2 text-slate-700">
-                <MessageCircleIcon className="size-4 text-slate-500" />
-                <span className="text-sm font-semibold">AI Chat</span>
+          <aside className="flex min-h-[720px] flex-col border-l-2 border-slate-200/70 pl-8">
+            <div className="flex items-center gap-2 text-slate-600">
+              <MessageCircleIcon className="size-4" />
+              <span className="text-sm font-semibold">AI Chat</span>
+            </div>
+            <p className="mt-2 text-xs text-slate-400">
+              Ask about your document. Answers will reference pages.
+            </p>
+            <div className="mt-6 flex flex-1 flex-col">
+              <div className="flex-1 text-sm text-slate-400">
+                No messages yet.
               </div>
-              <p className="mt-2 text-xs text-slate-400">
-                Ask about your document. Answers will reference pages.
+              <div className="mt-6 rounded-[24px] border border-slate-200/70 bg-white/80 px-4 py-3 shadow-[0_18px_50px_-40px_rgba(30,64,120,0.4)]">
+                <div className="flex items-end gap-3">
+                  <textarea
+                    rows={2}
+                    className="flex-1 resize-none bg-transparent text-sm text-slate-600 outline-none placeholder:text-slate-400"
+                    placeholder="Ask a question..."
+                  />
+                  <button
+                    type="button"
+                    className="flex size-9 items-center justify-center rounded-full bg-sky-600/90 text-white shadow-[0_10px_24px_-16px_rgba(14,116,144,0.7)] transition hover:bg-sky-700"
+                  >
+                    <ArrowUpRightIcon className="size-4" />
+                  </button>
+                </div>
+              </div>
+              <p className="mt-3 text-[11px] text-slate-400">
+                Double-check important information.
               </p>
-              <div className="mt-5 rounded-2xl border border-slate-200 bg-white px-3 py-3">
-                <input
-                  className="w-full bg-transparent text-sm text-slate-500 outline-none"
-                  placeholder="Ask a question..."
-                />
-              </div>
-              <Button
-                variant="ghost"
-                className="mt-4 w-full rounded-full border border-slate-200 bg-white text-slate-500"
-              >
-                Send
-                <ArrowUpRightIcon className="ml-2 size-4" />
-              </Button>
             </div>
           </aside>
         </div>
