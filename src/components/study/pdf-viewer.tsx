@@ -56,6 +56,9 @@ export function PdfViewer({
   const [numPages, setNumPages] = useState<number>(0);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [scale, setScale] = useState<number>(1);
+  const [pageSize, setPageSize] = useState<{ width: number; height: number } | null>(
+    null
+  );
   const [containerRef, bounds] = useMeasure();
   const isMinimal = variant === 'minimal';
 
@@ -64,6 +67,16 @@ export function PdfViewer({
     const padding = isMinimal ? 8 : 32;
     return Math.min(bounds.width - padding, 960);
   }, [bounds.width, isMinimal]);
+
+  const fitScale = useMemo(() => {
+    if (!isMinimal || !pageSize || !bounds.width || !bounds.height) return 1;
+    const padding = 16;
+    const availableWidth = Math.max(bounds.width - padding, 320);
+    const availableHeight = Math.max(bounds.height - padding, 320);
+    const widthScale = availableWidth / pageSize.width;
+    const heightScale = availableHeight / pageSize.height;
+    return Math.min(widthScale, heightScale, 1);
+  }, [bounds.height, bounds.width, isMinimal, pageSize]);
 
   if (!file) {
     return (
@@ -90,8 +103,8 @@ export function PdfViewer({
     <div
       className={cn(
         isMinimal
-          ? 'flex h-full flex-col gap-4'
-          : 'flex h-full flex-col gap-4 rounded-[28px] border border-slate-200/70 bg-white/70 p-4',
+          ? 'flex h-full min-h-0 flex-col gap-4'
+          : 'flex h-full min-h-0 flex-col gap-4 rounded-[28px] border border-slate-200/70 bg-white/70 p-4',
         className
       )}
     >
@@ -189,7 +202,7 @@ export function PdfViewer({
       <div
         ref={containerRef}
         className={cn(
-          'flex min-h-[520px] flex-1 items-center justify-center',
+          'flex min-h-0 flex-1 items-center justify-center',
           isMinimal ? 'bg-transparent' : 'rounded-2xl bg-slate-50/70 p-4'
         )}
       >
@@ -204,8 +217,12 @@ export function PdfViewer({
         >
           <Page
             pageNumber={pageNumber}
-            width={pageWidth}
-            scale={isMinimal ? 1 : scale}
+            width={isMinimal ? undefined : pageWidth}
+            scale={isMinimal ? fitScale : scale}
+            onLoadSuccess={(page) => {
+              const viewport = page.getViewport({ scale: 1 });
+              setPageSize({ width: viewport.width, height: viewport.height });
+            }}
             className={
               isMinimal ? '' : 'shadow-[0_12px_36px_-28px_rgba(15,23,42,0.35)]'
             }

@@ -13,6 +13,7 @@ import {
   PlusIcon,
   UploadCloudIcon,
 } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface UploadedFile {
   name: string;
@@ -29,6 +30,7 @@ export default function StudyroomPage() {
   const [error, setError] = useState<string | null>(null);
 
   const hasRoom = Boolean(currentFile);
+  const pagePadding = hasRoom ? 'px-6 py-4' : 'px-6 py-8';
 
   const handleUpload = async (file: File) => {
     setIsUploading(true);
@@ -60,32 +62,39 @@ export default function StudyroomPage() {
   };
 
   return (
-    <div className="relative min-h-[calc(100vh-var(--header-height))] overflow-hidden px-6 py-8 text-slate-900">
+    <div
+      className={cn(
+        'relative flex min-h-[calc(100vh-var(--header-height))] flex-col overflow-hidden text-slate-900',
+        pagePadding
+      )}
+    >
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(120%_120%_at_50%_0%,rgba(187,220,255,0.45)_0%,rgba(248,252,255,0.92)_55%,rgba(245,250,255,1)_100%)]" />
-      <header className="mb-10 flex flex-wrap items-center gap-4 animate-in fade-in-0">
-        <div className="flex items-center gap-3">
-          <SidebarTrigger className="rounded-full border border-slate-200/60 bg-white/70 p-2 text-slate-500 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.35)] backdrop-blur" />
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.32em] text-slate-400">
-              Studyroom
-            </p>
-            <h1 className="font-serif text-2xl text-slate-900">
-              Hey, what do you want to master?
-            </h1>
+      {!hasRoom && (
+        <header className="mb-10 flex flex-wrap items-center gap-4 animate-in fade-in-0">
+          <div className="flex items-center gap-3">
+            <SidebarTrigger className="rounded-full border border-slate-200/60 bg-white/70 p-2 text-slate-500 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.35)] backdrop-blur" />
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.32em] text-slate-400">
+                Studyroom
+              </p>
+              <h1 className="font-serif text-2xl text-slate-900">
+                Hey, what do you want to master?
+              </h1>
+            </div>
           </div>
-        </div>
-        <div className="ml-auto flex items-center gap-2">
-          <Badge
-            variant="outline"
-            className="rounded-full border-slate-200/70 bg-white/70 px-3 py-1 text-[11px] font-medium text-slate-500"
-          >
-            7 credits
-          </Badge>
-          <Button className="rounded-full bg-sky-600/90 px-4 text-sm text-white shadow-[0_14px_30px_-18px_rgba(14,116,144,0.75)] hover:bg-sky-700">
-            Upgrade
-          </Button>
-        </div>
-      </header>
+          <div className="ml-auto flex items-center gap-2">
+            <Badge
+              variant="outline"
+              className="rounded-full border-slate-200/70 bg-white/70 px-3 py-1 text-[11px] font-medium text-slate-500"
+            >
+              7 credits
+            </Badge>
+            <Button className="rounded-full bg-sky-600/90 px-4 text-sm text-white shadow-[0_14px_30px_-18px_rgba(14,116,144,0.75)] hover:bg-sky-700">
+              Upgrade
+            </Button>
+          </div>
+        </header>
+      )}
 
       <input
         ref={inputRef}
@@ -150,16 +159,16 @@ export default function StudyroomPage() {
           </button>
         </div>
       ) : (
-        <div className="grid gap-0 xl:grid-cols-[minmax(0,1fr)_420px]">
-          <section className="flex flex-col pr-8">
+        <div className="grid min-h-0 flex-1 gap-0 xl:grid-cols-[minmax(0,1fr)_420px]">
+          <section className="flex min-h-0 flex-col pr-8">
             <PdfViewer
               file={currentFile?.file ?? currentFile?.url}
               variant="minimal"
-              className="min-h-[720px]"
+              className="min-h-0 flex-1"
             />
           </section>
 
-          <aside className="flex min-h-[720px] flex-col border-l-2 border-slate-200/70 pl-8">
+          <aside className="flex min-h-0 flex-col border-l-2 border-slate-200/70 pl-8">
             <div className="flex items-center gap-2 text-slate-600">
               <MessageCircleIcon className="size-4" />
               <span className="text-sm font-semibold">AI Chat</span>
@@ -167,11 +176,11 @@ export default function StudyroomPage() {
             <p className="mt-2 text-xs text-slate-400">
               Ask about your document. Answers will reference pages.
             </p>
-            <div className="mt-6 flex flex-1 flex-col">
-              <div className="flex-1 text-sm text-slate-400">
+            <div className="mt-6 flex min-h-0 flex-1 flex-col">
+              <div className="min-h-0 flex-1 overflow-y-auto pr-2 text-sm text-slate-400">
                 No messages yet.
               </div>
-              <div className="mt-6 rounded-[24px] border border-slate-200/70 bg-white/80 px-4 py-3 shadow-[0_18px_50px_-40px_rgba(30,64,120,0.4)]">
+              <div className="mt-4 rounded-[24px] border border-slate-200/70 bg-white/80 px-4 py-3 shadow-[0_18px_50px_-40px_rgba(30,64,120,0.4)]">
                 <div className="flex items-end gap-3">
                   <textarea
                     rows={2}
