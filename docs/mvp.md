@@ -1,135 +1,114 @@
-## **MVP v1 — PDF-first Study Plan + PDF Chat (English)**
+## **MVP v1 — 以 PDF 为核心的学习计划 + PDF 聊天（中文）**
 
-### **One-line promise**
+### **一句话承诺**
 
-User uploads PDFs → the system summarizes and generates a **study plan** → user can **chat with the PDF**. That’s enough to launch. Pomodoro, progress bar, and subject folders come after.
-
----
-### **MVP v1 Must-have (Launch Scope)**
-
-#### **1) PDF Upload (single subject for v1)**
-
-- Upload PDFs (multiple PDFs allowed, but keep a limit for MVP)
-
-- PDF list management: rename / delete
-
-#### **2) PDF → Structured Course (study plan generation)**
-
-- Parse PDFs (text extraction + basic segmentation)
-
-- Generate:
-
-    - **Modules** (Module 1..N)
-
-    - **Summary** for each module
-
-- Content should be traceable back to the PDF (at least **page range / section range** per module)
-
-#### **3) PDF Chat (core interaction)**
-
-- Allow user to ask questions about the PDF and get answers grounded in the uploaded content
-
-- Keep responses traceable to source (page/section references if possible)
+用户上传 PDF → 系统总结并生成 **学习计划** → 用户可以与 **PDF 聊天**。这就足够上线。番茄钟、进度条、学科文件夹后续再做。
 
 ---
+### **MVP v1 必须包含（上线范围）**
 
-### **MVP v1 Roadmap (Execution Steps)**
+#### **1) PDF 上传（v1 只做单一主题）**
 
-1) **Foundation & Auth**
+- 上传 PDF（允许多份）
 
-- Confirm auth flow works (login/register)
+- PDF 列表管理：重命名 / 删除
 
-- Create the initial “course/project” entry point (single subject for v1)
+#### **2) PDF → 结构化课程（学习计划生成）**
 
-2) **PDF Upload & Management**
+- 解析 PDF（文本抽取 + 基础切分）
 
-- Upload PDFs (size/count limit)
+- 生成：
 
-- Rename / delete PDFs
+    - **模块**（Module 1..N）
 
-- Store files to S3/R2
+    - 每个模块的 **总结**
 
-3) **PDF Parsing & Segmentation**
+- 内容需可追溯回 PDF（至少保留 **页码范围 / 段落范围**）
 
-- Extract text from PDF
+#### **3) PDF 聊天（核心交互）**
 
-- Basic segmentation by page/section
+- 允许用户基于 PDF 内容提问并得到回答
 
-- Persist page ranges for traceability
+- 回答尽量带来源引用（页码/段落）
 
-4) **AI Study Plan Generation**
+---
 
-- Generate modules from content
+### **MVP v1 路线图（执行步骤）**
 
-- Generate module summaries
+1) **基础与登录**
 
-- Store module → page range mapping
+- 确认登录/注册可用
+
+- 创建初始的“课程/项目”入口（v1 单主题）
+
+2) **PDF 上传与管理**
+
+- 上传 PDF
+
+- 重命名 / 删除
+
+- 存储到 S3/R2
+
+3) **PDF 解析与切分**
+
+- 抽取文本
+
+- 按页/段进行基础切分
+
+- 记录页码范围以便溯源
+
+4) **AI 学习计划生成**
+
+- 从内容生成模块
+
+- 生成每个模块摘要
+
+- 存储模块 ↔ 页码范围映射
 
 5) **PDF Chat**
 
-- Q&A grounded on uploaded content
+- 基于上传内容的问答
 
-- Responses include page/section references
+- 回答包含页码/段落引用
 
-6) **Minimal UI & Flow**
+6) **最小 UI 与流程**
 
-- Upload page → course page → chat page
+- 上传页 → 课程页 → 聊天页
 
-- Clear “continue” flow
+- 清晰的“继续学习”流程
 
-- Success/error handling
+- 成功/失败状态提示
 
-7) **MVP QA & Launch**
+7) **MVP 测试与上线**
 
-- End‑to‑end test: upload → plan → chat
+- 全流程验证：上传 → 计划 → 聊天
 
-- Prepare basic docs / onboarding
-
----
-
-### **Technical Approach (MVP)**
-
-- **PDF parsing**: LangChain JS PDFLoader (or pdf-parse) for text extraction (no OCR).
-
-- **Chunking**: RecursiveCharacterTextSplitter; keep page/section metadata for traceability.
-
-- **Embeddings**: OpenRouter embeddings API (OpenAI-compatible base URL).
-
-- **Vector store**: Supabase Postgres + pgvector (`vector` extension enabled).
-
-- **Retrieval**: Top‑K semantic search + page references in responses.
-
-- **RAG flow**: query → embed → retrieve chunks → compose context → LLM answer.
-
-- **File storage**: PDF files stored in object storage (S3/R2); DB stores metadata + chunks.
+- 准备基础文档 / onboarding
 
 ---
 
-### **Post-MVP (v1.1 / v2)**
+### **技术方案（MVP）**
 
-- **Separate folder for each Subject** (notes + data library)
+- **PDF 解析**：LangChain JS PDFLoader（或 pdf-parse）抽取文本（不做 OCR）。
 
-- **Pomodoro sessions / time-based plan**
+- **切块策略**：RecursiveCharacterTextSplitter；保留页码/段落元数据。
 
-- **Progress bar** showing how much of the PDF is remaining
+- **Embeddings**：OpenRouter embeddings API（OpenAI 兼容地址）。
 
-- **Quizzes or flashcards** after the study stage for memory/revision
+- **向量库**：Supabase Postgres + pgvector（启用 `vector` 扩展）。
 
-- **Active learning loop** (learn → quiz → confirm → unlock next module)
+- **检索方式**：Top‑K 语义检索 + 引用页码。
 
-- Interleaved revision questions from previous modules
+- **RAG 流程**：query → embed → 检索 chunks → 组装上下文 → LLM 回答。
+
+- **文件存储**：PDF 文件存对象存储（S3/R2），数据库仅存元数据与 chunks。
 
 ---
-### **MVP v1 Won’t-have (cut for v1)**
 
-- YouTube / web links / Docs ingestion
+### **Post‑MVP（v1.1 / v2）**
 
-- Separate flashcard product experience (standalone mode)
+- **每个 Subject 独立文件夹**（笔记 + 数据）
 
-- Homework AI / photo solving
+- **番茄钟 / 时间驱动计划**
 
-- Real website blocking / notification blocking (Focus Mode system-level control)
-
-- Advanced personalization (diagnostic tests, mastery models, knowledge graph)
-
-- Guaranteed support for scanned/image PDFs (OCR)
+- **进度条**（显示剩余页数/比例）
