@@ -30,7 +30,12 @@ export default function StudyroomPage() {
   const [error, setError] = useState<string | null>(null);
 
   const hasRoom = Boolean(currentFile);
-  const pagePadding = hasRoom ? 'px-6 py-4' : 'px-6 py-8';
+  const pagePadding = hasRoom
+    ? 'px-6 pt-4 pb-2'
+    : 'px-6 py-8';
+  const pageHeight = hasRoom
+    ? 'h-[100svh]'
+    : 'min-h-[calc(100vh-var(--header-height))]';
 
   const handleUpload = async (file: File) => {
     setIsUploading(true);
@@ -64,7 +69,8 @@ export default function StudyroomPage() {
   return (
     <div
       className={cn(
-        'relative flex min-h-[calc(100vh-var(--header-height))] flex-col overflow-hidden text-slate-900',
+        'relative flex flex-col overflow-hidden text-slate-900',
+        pageHeight,
         pagePadding
       )}
     >
@@ -159,7 +165,7 @@ export default function StudyroomPage() {
           </button>
         </div>
       ) : (
-        <div className="grid min-h-0 flex-1 gap-0 xl:grid-cols-[minmax(0,1fr)_420px]">
+        <div className="grid min-h-0 flex-1 items-stretch gap-0 xl:grid-cols-[minmax(0,1fr)_460px]">
           <section className="flex min-h-0 flex-col pr-8">
             <PdfViewer
               file={currentFile?.file ?? currentFile?.url}
